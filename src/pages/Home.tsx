@@ -1,5 +1,55 @@
 import Navbar from "@/components/Navbar";
 
+const newReleases = [
+  {
+    name: 'Simple way of piece life',
+    price: '40.00',
+    author: 'Armor Ramsey',
+    image: 'assets/images/home/home-release-book-1.png'
+  },
+  {
+    name: 'Great travel at desert',
+    price: '38.00',
+    author: 'Sanchit Howdy',
+    image: 'assets/images/home/home-release-book-2.png'
+  },
+  {
+    name: 'The lady beauty Scarlett',
+    price: '45.00',
+    author: 'Arthur Doyle',
+    image: 'assets/images/home/home-release-book-3.png'
+  },
+  {
+    name: 'Once upon a time',
+    price: '35.00',
+    author: 'Klien Marry',
+    image: 'assets/images/home/home-release-book-4.png'
+  },
+]
+
+const blogs = [
+  {
+    title: 'Learn about this week\'s top author',
+    desc: 'Jump start your book reading by quickly check through the popular book categories...',
+    image: 'assets/images/home/blog-1.png'
+  },
+  {
+    title: 'Why we celebrate readers',
+    desc: 'Jump start your book reading by quickly check through the popular book categories...',
+    image: 'assets/images/home/blog-2.png'
+  },
+  {
+    title: 'Toddlers can also read',
+    desc: 'Jump start your book reading by quickly check through the popular book categories...',
+    image: 'assets/images/home/blog-3.png'
+  },
+  {
+    title: 'Get started on your game',
+    desc: 'Jump start your book reading by quickly check through the popular book categories...',
+    image: 'assets/images/home/blog-4.png'
+  },
+]
+
 export default function Home() {
   return (
     <div>
@@ -12,18 +62,18 @@ export default function Home() {
             <div className="h-max">
               <h1 className="capitalize text-6xl mb-4">ipsum dolor si</h1>
               <p className="capitalize text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu.</p>
-              <button className="outline w-max py-3 px-4 mt-4 rounded-md">Read More</button>
+              <button className="outline w-40 py-3 px-4 mt-4 rounded-md">Read More</button>
             </div>
           </div>
           <div>
-            <img src="" alt="" />
+            <img src="assets/images/home/home-hero-img.png" alt="books" />
           </div>
         </div>
       </section>
 
       {/* Categories */}
       <section className="min-h-128 py-20 px-8 text-blue my-8">
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-4">
           {/* Left */}
           <div>
             <div className="flex items-center">
@@ -40,41 +90,41 @@ export default function Home() {
         </div>
         
 
-        <div className="grid grid-cols-3 gap-2 mt-6">
+        <div className="grid grid-cols-3 gap-14 mt-10">
           {/* Col */}
           <div className="text-center">
-            <img src="" alt="" className="w-32 h-38 shadow rounded-lg" />
+            <img src="assets/images/home/higher-education-books.png" alt="higher education" className="w-full h-38 shadow rounded-lg" />
             <h2 className="font-bold text-xl my-4">Higher Education</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,</p>
           </div>
 
           {/* Col */}
           <div className="text-center">
-            <img src="" alt="" className="w-32 h-38 shadow rounded-lg" />
+            <img src="assets/images/home/management-books.png" alt="management" className="w-full h-38 shadow rounded-lg" />
             <h2 className="font-bold text-xl my-4">Management Books</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,</p>
           </div>
 
           {/* Col */}
           <div className="text-center">
-            <img src="" alt="" className="w-32 h-38 shadow rounded-lg" />
+            <img src="assets/images/home/engineering-books.png" alt="engineering" className="w-full h-38 shadow rounded-lg" />
             <h2 className="font-bold text-xl my-4">Engineering Books</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,</p>
           </div>
         </div>
 
-        <div className="mt-6">
+        <div className="mt-10">
           <div className="flex justify-center">
-            <button className="outline w-max py-3 px-4 mt-4 rounded-md">Read More</button>
+            <button className="outline w-40 py-3 px-4 mt-4 rounded-md">Read More</button>
           </div>
         </div>
       </section>
 
       {/* Ebook */}
-      <section className="min-h-128 py-20 px-8 text-blue my-8 gradient-1">
+      <section className="px-8 text-blue my-8 gradient-1">
         <div className="grid grid-cols-2 gap-2">
           {/* Left */}
-          <div>
+          <div className='flex flex-col justify-center'>
             <div className="flex items-center">
               <hr className="inline-block my-auto me-4 w-8 border-t-2 border-orange" /> 
               <h5 className='text-orange'>ebook</h5>
@@ -88,12 +138,12 @@ export default function Home() {
 
           {/* Right */}
           <div>
-            <img src="" alt="" className="w-full h-full" />
+            <img src="assets/images/home/home-ebooks.png" alt="ebooks" className="w-full h-full" />
           </div>
         </div>
       </section>
 
-      {/* Ebook */}
+      {/* Book Releases */}
       <section className="min-h-128 py-20 px-8 text-blue my-8">
         <h5 className="text-sm mb-4 text-center text-gray">Some quality items</h5>
         <div className="flex justify-center items-center">
@@ -103,79 +153,111 @@ export default function Home() {
         </div>
       
         <div className="grid grid-cols-4 gap-20 mt-12">
-          <div>
-            <div className="book-card-shadow p-4 mb-6 flex justify-center">
-              <img src="" alt="" className="book book-drop-shadow" />
-            </div>
+          {newReleases.map((book, index) => (
+            <div key={index}>
+              <div className="book-card-shadow p-4 mb-6 flex justify-center">
+                <img src={book.image} alt="book cover" className="" />
+              </div>
 
-            <div className="text-center">
-              <h3 className="text-2xl">Simple Way of Piece Life</h3>
-              <h5 className="text-sm text-gray">Armor Ramsey</h5>
-              <h5 className="text-md mt-2 text-orange">$ 40.00</h5>
+              <div className="text-center">
+                <h3 className="text-2xl">{book.name}</h3>
+                <h5 className="text-sm text-gray">{book.author}</h5>
+                <h5 className="text-md mt-2 text-orange">$ {book.price}</h5>
+              </div>
             </div>
-          </div>
-
-          <div>
-            <div className="book-card-shadow p-4 mb-6 flex justify-center">
-              <img src="" alt="" className="book book-drop-shadow" />
-            </div>
-
-            <div className="text-center">
-              <h3 className="text-2xl">Simple Way of Piece Life</h3>
-              <h5 className="text-sm text-gray">Armor Ramsey</h5>
-              <h5 className="text-md mt-2 text-orange">$ 40.00</h5>
-            </div>
-          </div>
-
-          <div>
-            <div className="book-card-shadow p-4 mb-6 flex justify-center">
-              <img src="" alt="" className="book book-drop-shadow" />
-            </div>
-
-            <div className="text-center">
-              <h3 className="text-2xl">Simple Way of Piece Life</h3>
-              <h5 className="text-sm text-gray">Armor Ramsey</h5>
-              <h5 className="text-md mt-2 text-orange">$ 40.00</h5>
-            </div>
-          </div>
-
-          <div>
-            <div className="book-card-shadow p-4 mb-6 flex justify-center">
-              <img src="" alt="" className="book book-drop-shadow" />
-            </div>
-
-            <div className="text-center">
-              <h3 className="text-2xl">Simple Way of Piece Life</h3>
-              <h5 className="text-sm text-gray">Armor Ramsey</h5>
-              <h5 className="text-md mt-2 text-orange">$ 40.00</h5>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
 
-      {/* Ebook */}
+      {/* Featured Book */}
       <section className="min-h-128 py-20 px-8 text-blue my-8 gradient-1">
         <div className="grid grid-cols-2 gap-20 mt-12">
           <div className="p-12">
-            <div className="book-card-shadow p-4 mb-6 flex justify-center">
-              <img src="" alt="" className="featured-book book-drop-shadow" />
+            <div className="flex justify-center">
+              <img src="assets/images/home/featured-book.png" alt="" className="" />
             </div>
           </div>
           <div className="p-12 flex justify-center items-center">
             <div className="h-max">
               <h2 className="text-3xl mb-8">Featured Book</h2>
               <div className="mb-6">
-                <hr className="w-24 border-orange" />
+                <hr className="w-24 border-t-2 mb-4 border-orange" />
                 <h5 className="text-sm text-gray uppercase">By Timbur Hood</h5>
               </div>
               <h2 className="text-2xl mb-6">Birds Gonna Be Happy</h2>
               <p className="text-gray mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac.</p>
               <h4 className="text-orange text-md">$ 45.00</h4>
 
-              <button className="mt-16 py-4 px-6 outline border-blue rounded-md">View More</button>
+              <button className="mt-16 w-40 py-4 px-6 outline border-blue rounded-md">View More</button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Discount */}
+      <section className="px-8 text-blue bg-[#FCEBEA] m-16 rounded-[20px]">
+        <div className="grid grid-cols-2 gap-2">
+          {/* Left */}
+          <div className='flex flex-col justify-center'>
+            <h3 className="text-blue font-bold text-4xl mb-4">All books are 50% off now! Don't miss such a deal!</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac.</p>
+            <div className="mt-4 flex gap-4">
+              <div className="text-center">
+                <span className="block text-orange font-bold text-3xl">768</span>
+                <span className="block uppercase text-xl">Days</span>
+              </div>
+              <div className="text-center">
+                <span className="block text-orange font-bold text-3xl">01</span>
+                <span className="block uppercase text-xl">hours</span>
+              </div>
+              <div className="text-center">
+                <span className="block text-orange font-bold text-3xl">27</span>
+                <span className="block uppercase text-xl">min</span>
+              </div>
+              <div className="text-center">
+                <span className="block text-orange font-bold text-3xl">55</span>
+                <span className="block uppercase text-xl">sec</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right */}
+          <div>
+            <img src="assets/images/home/discount.png" alt="ebooks" className="w-full h-full" />
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="p-40 text-blue my-8 bg-[#E0E0E0]">
+        <div className="grid grid-cols-2 gap-2 my-auto">
+          {/* Left */}
+          <div className='flex flex-col justify-center'>
+            <h3 className="text-black font-bold text-4xl mb-4">Subscribe to our newsletter</h3>
+          </div>
+
+          {/* Right */}
+          <div className='flex flex-col justify-center'>
+            <p className="text-[#7A7A7A] mb-10">Sed eu feugiat amet, libero ipsum enim pharetra hac dolor sit amet, consectetur. Elit adipiscing enim pharetra hac.</p>
+            <input type="text" className="w-full border-b border-black bg-transparent text-black" />
+          </div>
+        </div>
+      </section>
+
+      {/* Blog */}
+      <section className="px-8 text-blue my-8">
+        <h2 className="text-center text-black sentence">Read our many blogs</h2>
+        <div className="grid grid-cols-2 gap-10 my-10">
+          {blogs.map((blog, index) => (
+            <div className="relative hover:cursor-pointer" key={index}>
+              <img src={blog.image} alt="blog image" />
+              <caption className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full">
+                <h3 className="text-white">{blog.title}</h3>
+                <p className="text-white">{blog.desc}</p>
+              </caption>
+            </div>
+          ))}
         </div>
       </section>
     </div>

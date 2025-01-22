@@ -11,6 +11,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<Home />} />
+          <Route path="/books" element={<Home />} />
+          <Route path="/products" element={<Home />} />
         </Routes>
       </Router>
     </QueryClientProvider>
