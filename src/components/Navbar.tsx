@@ -31,13 +31,13 @@ export default function Navbar() {
             <div className="flex justify-center">
               <div className="grid grid-cols-3 gap-2">
                 <div className="border-e-2 border-gray text-center">
-                  <Link to="/" className="inline-flex items-center gap-2 px-2 uppercase"><img src="assets/images/icons/nav-account.svg" alt="" />Home</Link>
+                  <Link to="/" className="inline-flex items-center gap-2 px-2 uppercase"><img src="assets/images/icons/nav-account.svg" alt="" />Account</Link>
                 </div>
                 <div className="border-e-2 border-gray text-center">
-                  <Link to="/" className="inline-flex items-center gap-2 px-2 uppercase"><img src="assets/images/icons/nav-cart.svg" alt="" />About Us</Link>
+                  <Link to="/" className="inline-flex items-center gap-2 px-2 uppercase"><img src="assets/images/icons/nav-cart.svg" alt="" />Cart:(0$)</Link>
                 </div>
                 <div className="text-center">
-                  <Link to="/" className="inline-flex items-center gap-2 px-2 uppercase"><img src="assets/images/icons/nav-wishlist.svg" alt="" />Books</Link>
+                  <Link to="/" className="inline-flex items-center gap-2 px-2 uppercase"><img src="assets/images/icons/nav-wishlist.svg" alt="" />Wishlist</Link>
                 </div>
               </div>
             </div>
@@ -51,19 +51,19 @@ export default function Navbar() {
             <Link to="/" className="inline-block px-2 text-white font-bold uppercase">Home</Link>
           </div>
           <div className="border-e-2 border-white text-center p-2">
-            <Link to="/" className="inline-block px-2 text-white uppercase">About Us</Link>
+            <Link to="/about" className="inline-block px-2 text-white uppercase">About Us</Link>
           </div>
           <div className="border-e-2 border-white text-center p-2">
-            <Link to="/" className="inline-block px-2 text-white uppercase">Books</Link>
+            <Link to="/books" className="inline-block px-2 text-white uppercase">Books</Link>
           </div>
           <div className="border-e-2 border-white text-center p-2">
-            <Link to="/" className="inline-block px-2 text-white uppercase">New Release</Link>
+            <a href="#new-release" className="inline-block px-2 text-white uppercase">New Release</a>
           </div>
           <div className="border-e-2 border-white text-center p-2">
-            <Link to="/" className="inline-block px-2 text-white uppercase">Contact Us</Link>
+            <a href="#contact" className="inline-block px-2 text-white uppercase">Contact Us</a>
           </div>
           <div className="text-center p-2">
-            <Link to="/" className="inline-block px-2 text-white uppercase">Blog</Link>
+            <a href="#blog" className="inline-block px-2 text-white uppercase">Blog</a>
           </div>
         </div>
       </div>

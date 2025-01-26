@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -24,13 +25,13 @@ export default function Footer() {
         <div className="col-span-2"></div>
         <div className="col-span-2 flex flex-col gap-2">
           <h4 className="text-[20px] uppercase text-orange mb-8">Contact</h4>
-          <a href="#" className="text-[14px] text-blue uppercase">Home</a>
-          <a href="#" className="text-[14px] text-blue uppercase">About us</a>
-          <a href="#" className="text-[14px] text-blue uppercase">Books</a>
-          <a href="#" className="text-[14px] text-blue uppercase">Ebooks</a>
-          <a href="#" className="text-[14px] text-blue uppercase">New Release</a>
-          <a href="#" className="text-[14px] text-blue uppercase">Contact Us</a>
-          <a href="#" className="text-[14px] text-blue uppercase">Blog</a>
+          <Link to="/" className="text-[14px] text-blue uppercase">Home</Link>
+          <Link to="/about" className="text-[14px] text-blue uppercase">About us</Link>
+          <Link to="/books" className="text-[14px] text-blue uppercase">Books</Link>
+          <a href="#ebooks" className="text-[14px] text-blue uppercase">Ebooks</a>
+          <a href="#new-release" className="text-[14px] text-blue uppercase">New Release</a>
+          <a href="#contact" className="text-[14px] text-blue uppercase">Contact Us</a>
+          <a href="#blog" className="text-[14px] text-blue uppercase">Blog</a>
         </div>
         <div className="col-span-4 flex flex-col">
           <h4 className="text-[20px] uppercase text-orange mb-8">Latest news</h4>

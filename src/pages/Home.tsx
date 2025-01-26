@@ -57,7 +57,7 @@ export default function Home() {
       <Navbar />
       
       {/* Hero */}
-      <section className="min-h-128 gradient-1 text-green mb-8">
+      <section className="min-h-128 home-hero-gradient text-green mb-8">
         <div className="grid grid-cols-2 gap-2">
           <div className="flex justify-center items-center p-4">
             <div className="h-max">
@@ -66,7 +66,7 @@ export default function Home() {
               <button className="outline w-[197px] h-[61px] mt-8 rounded-md">Read More</button>
             </div>
           </div>
-          <div>
+          <div className="flex justify-end">
             <img src="assets/images/home/home-hero-img.png" alt="books" />
           </div>
         </div>
@@ -122,10 +122,10 @@ export default function Home() {
       </section>
 
       {/* Ebook */}
-      <section className="px-8 text-blue my-8 gradient-1">
-        <div className="grid grid-cols-2 gap-10">
+      <section className="px-8 text-blue my-8 ebooks-gradient" id='ebooks'>
+        <div className="grid grid-cols-12 gap-10">
           {/* Left */}
-          <div className='flex flex-col justify-center'>
+          <div className='col-span-5 flex flex-col justify-center'>
             <div className="flex items-center">
               <hr className="inline-block my-auto me-4 w-8 border-t-2 border-orange" /> 
               <h5 className='text-orange text-sm'>ebook</h5>
@@ -141,14 +141,14 @@ export default function Home() {
           </div>
 
           {/* Right */}
-          <div>
-            <img src="assets/images/home/home-ebooks.png" alt="ebooks" className="w-full h-full" />
+          <div className="col-span-7 flex justify-end">
+            <img src="assets/images/home/home-ebooks.png" alt="ebooks" className="" />
           </div>
         </div>
       </section>
 
       {/* Book Releases */}
-      <section className="min-h-128 py-20 px-8 text-blue my-8">
+      <section className="min-h-128 py-20 px-8 text-blue my-8" id='new-release'>
         <h5 className="text-[13px] mb-4 text-center text-[#7A7A7A]">Some quality items</h5>
         <div className="flex justify-center items-center">
           <hr className="grow my-auto me-4 w-8 border-t-2 border-gray-100" /> 
@@ -173,7 +173,6 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Featured Book */}
       <section className="min-h-128 py-20 px-8 text-blue my-8 gradient-1">
         <div className="grid grid-cols-2 gap-20 mt-12">
@@ -190,7 +189,7 @@ export default function Home() {
                 <h5 className="text-[13px] text-gray uppercase">By Timbur Hood</h5>
               </div>
               <h2 className="text-[28px] mb-6">Birds Gonna Be Happy</h2>
-              <p className="text-[#7A7A7A] text-[16px] mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac.</p>
+              <p className="text-[#7A7A7A] text-xl mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac.</p>
               <h4 className="text-orange text-[23px]">$ 45.00</h4>
 
               <button className="mt-6 w-[198px] h-[61px] outline border border-[#393280] rounded-md">View More</button>
@@ -253,7 +252,7 @@ export default function Home() {
       </section>
 
       {/* Blog */}
-      <section className="px-8 text-blue my-8">
+      <section className="px-8 text-blue my-8" id='blog'>
         <h2 className="text-[32px] text-center text-black sentence">Read our many blogs</h2>
         <div className="grid grid-cols-2 gap-10 my-10">
           {blogs.map((blog, index) => (
