@@ -116,7 +116,7 @@ export default function Home() {
 
         <div className="mt-10">
           <div className="flex justify-center">
-            <button className="outline w-[197px] h-[61px] mt-4 rounded-md">Read More</button>
+            <button className="outline w-[197px] h-[51px] mt-4 rounded-md flex justify-center items-center gap-2">View More <img src="assets/images/icons/btn-arrow.svg" alt="arrow" /></button>
           </div>
         </div>
       </section>
@@ -174,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* Featured Book */}
-      <section className="min-h-128 py-20 px-8 text-blue my-8 gradient-1">
+      <section className="min-h-128 py-20 px-8 text-blue my-8 featured-book-gradient">
         <div className="grid grid-cols-2 gap-20 mt-12">
           <div className="p-12">
             <div className="flex justify-center">

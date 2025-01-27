@@ -10,8 +10,16 @@
     background: linear-gradient(83.53deg, #FFE6E6 22.18%, #F5FFFE 49.52%, #FFFFFF 114.21%, #FFFFFF 171.73%);
 }
 
+.books-hero-gradient {
+    background: linear-gradient(78.83deg, #FFE6E6 8.52%, #F5FFFE 68.88%, #FFFFFF 101.74%);
+}
+
 .book-card-shadow {
     box-shadow: 0px 4px 10px 0px #00000026;
+}
+
+.featured-book-gradient {
+    background: linear-gradient(78.43deg, #FBEEEE -27.34%, #F7FFFE 89.92%);
 }
 
 .ebooks-gradient {

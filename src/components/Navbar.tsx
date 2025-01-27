@@ -45,7 +45,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="flex justify-center bg-green">
+      <div className="flex justify-center bg-green sticky top-0 z-50">
         <div className="grid grid-cols-6 gap-2">
           <div className="border-e-2 border-white text-center p-2">
             <Link to="/" className="inline-block px-2 text-white font-bold uppercase">Home</Link>

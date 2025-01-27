@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import Footer from "@/components/footer";
 import Navbar from "@/components/Navbar";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const newReleases = [
   {
@@ -42,6 +43,7 @@ const blogs = [
 ]
 
 export default function About() {
+  usePageTitle('About Us')
   return (
     <div>
       <Navbar />

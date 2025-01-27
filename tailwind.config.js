@@ -12,6 +12,9 @@ export default {
       spacing: {
         '128': '32rem',
       },
+      minWidth: {
+        '3/4': '75%'
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',

@@ -4,6 +4,7 @@ export default function Footer() {
   return (
     <div className="p-20 text-blue my-8 footer-gradient">
       <div className="grid grid-cols-12 gap-16 my-10">
+        <div className="col-span-1"></div>
         <div className="col-span-3 flex flex-col justify-center">
           <img src="assets/images/logo.png" alt="logo" className="w-[83px] h-[87px] mb-4" />
           <p className="text-[18px] mb-10">Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
@@ -59,9 +60,15 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex justify-between text-blue">
-        <span className="text-[16px] capitalize">&copy; 2022 Arihant. All rights reserved.</span>
-        <span className="text-[16px] capitalize"><span className="text-orange">Privacy</span> | Terms of service</span>
+      <div className="grid grid-cols-12 gap-16">
+        <div className="col-span-1"></div>
+        <div className="col-span-3 flex flex-col justify-start">
+          <span className="text-[16px] capitalize">&copy; 2022 Arihant. All rights reserved.</span>
+        </div>
+        <div className="col-span-5"></div>
+        <div className="col-span-3 flex flex-col justify-end">
+          <span className="text-[16px] capitalize text-end"><span className="text-orange">Privacy</span> | Terms of service</span>
+        </div>
       </div>
     </div>
   )
