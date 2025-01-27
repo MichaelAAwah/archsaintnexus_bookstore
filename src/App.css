@@ -30,6 +30,10 @@
     box-shadow: 1.03px 4.12px 15px 0px #8282822E;
 }
 
+.products-nav-gradient {
+    background: linear-gradient(82.93deg, #FFE6E6 0%, #F5FFFE 113.52%);
+}
+
 /* .book {
     width: 219px;
     height: 318px;
