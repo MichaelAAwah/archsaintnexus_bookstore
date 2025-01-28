@@ -161,8 +161,8 @@ export default function About() {
               </div>
 
               <div className="text-center">
-                <h3 className="text-[22px] text-[#173F5F]">{book.name}</h3>
-                <h5 className="text-[14px] text-gray">{book.author}</h5>
+                <h3 className="text-[22px] text-[#173F5F] capitalize">{book.name}</h3>
+                <h5 className="text-[14px] text-gray capitalize">{book.author}</h5>
                 <div className="flex justify-center gap-2 mt-4">
                   <img src="assets/images/about/rating.svg" alt="rating" />
                 </div>

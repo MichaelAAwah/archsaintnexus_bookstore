@@ -164,8 +164,8 @@ export default function Home() {
               </div>
 
               <div className="text-center">
-                <h3 className="text-[22px]">{book.name}</h3>
-                <h5 className="text-[14px] text-gray">{book.author}</h5>
+                <h3 className="text-[22px] capitalize">{book.name}</h3>
+                <h5 className="text-[14px] text-gray capitalize">{book.author}</h5>
                 <h5 className="text-[18px] mt-2 text-orange">$ {book.price}</h5>
               </div>
             </div>

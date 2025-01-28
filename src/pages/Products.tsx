@@ -12,19 +12,31 @@ const books = [
     name: 'Great travel at desert',
     price: '38.00',
     author: 'Sanchit Howdy',
-    image: 'assets/images/home/home-release-book-2.png'
+    image: 'assets/images/products/book-5.png'
+  },
+  {
+    name: 'The lady beauty Scarlett',
+    price: '45.00',
+    author: 'Arthur Doyle',
+    image: 'assets/images/products/book-6.png'
+  },
+  {
+    name: 'Great travel at desert',
+    price: '38.00',
+    author: 'Sanchit Howdy',
+    image: 'assets/images/products/book-5.png'
+  },
+  {
+    name: 'The lady beauty Scarlett',
+    price: '45.00',
+    author: 'Arthur Doyle',
+    image: 'assets/images/products/book-7.png'
   },
   {
     name: 'The lady beauty Scarlett',
     price: '45.00',
     author: 'Arthur Doyle',
     image: 'assets/images/home/home-release-book-3.png'
-  },
-  {
-    name: 'Once upon a time',
-    price: '35.00',
-    author: 'Klien Marry',
-    image: 'assets/images/home/home-release-book-4.png'
   },
 ]
 
@@ -76,7 +88,7 @@ export default function Products() {
         </div>
 
         <div className="flex justify-center products-nav-gradient p-10">
-          <h3 className="text-center uppercase text-blue">Home / Products</h3>
+          <h3 className="text-center uppercase text-blue"><Link to="/">Home</Link> / Products</h3>
         </div>
       </div>
 
@@ -144,7 +156,7 @@ export default function Products() {
 
             {/* Book Lists */}
             <section className="min-h-128 px-8 text-blue my-8" id='new-release'>
-              <div className="grid grid-cols-3 xl:grid-cols-4 gap-x-20">
+              <div className="grid grid-cols-3 xl:grid-cols-3 gap-x-20">
                 {books.map((book, index) => (
                   <div key={index}>
                     <div className="book-card-shadow p-4 mb-6 flex justify-center">
@@ -152,8 +164,8 @@ export default function Products() {
                     </div>
 
                     <div className="text-center">
-                      <h3 className="text-[22px]">{book.name}</h3>
-                      <h5 className="text-[14px] text-gray">{book.author}</h5>
+                      <h3 className="text-[22px] capitalize">{book.name}</h3>
+                      <h5 className="text-[14px] text-gray capitalize">{book.author}</h5>
                       <h5 className="text-[18px] mt-2 text-orange">$ {book.price}</h5>
                     </div>
                   </div>
