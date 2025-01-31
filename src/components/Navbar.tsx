@@ -20,12 +20,13 @@ export default function Navbar() {
 
         <div className="grid grid-cols-12 gap-4 items-center py-4">
           <div className="col-span-2">
-            <div className="rounded-full w-20 h-20 bg-gray-800">
+            <div className="rounded-full w-20 h-20 bg-[#C4C4C4]">
 
             </div>
           </div>
-          <div className="col-span-5 items-center">
-            <input type="search" className="w-full bg-gray-200 rounded-3xl p-2 px-4" placeholder="Search Books" />
+          <div className="col-span-5 items-center relative">
+            <input type="search" className="w-full bg-[#F6F6F6] rounded-3xl p-2 px-4 pe-[18px]" placeholder="Search Books" />
+            <img className="absolute top-3 right-2" src="assets/images/icons/nav-search.svg" alt="search icon" />
           </div>
           <div className="col-span-5 items-center">
             <div className="flex justify-center">
@@ -48,10 +49,10 @@ export default function Navbar() {
       <div className="flex justify-center bg-green sticky top-0 z-50">
         <div className="grid grid-cols-6 gap-2">
           <div className="border-e-2 border-white text-center p-2">
-            <Link to="/" className="inline-block px-2 text-white font-bold uppercase">Home</Link>
+            <Link to="/" className="inline-block px-2 text-white uppercase">Home</Link>
           </div>
           <div className="border-e-2 border-white text-center p-2">
-            <Link to="/about" className="inline-block px-2 text-white uppercase">About Us</Link>
+            <Link to="/about" className="inline-block px-2 text-white font-bold uppercase">About Us</Link>
           </div>
           <div className="border-e-2 border-white text-center p-2">
             <Link to="/books" className="inline-block px-2 text-white uppercase">Books</Link>

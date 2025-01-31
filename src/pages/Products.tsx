@@ -1,4 +1,4 @@
-import FooterOrange from '@/components/footerOrange'
+import FooterOrange from '@/components/footerorange'
 import { Link } from 'react-router-dom'
 
 const books = [
@@ -45,41 +45,42 @@ export default function Products() {
     <div className='text-blue'>
       {/* Navbar */}
       <div>
-        <div className='mx-8 text-green'>
-          <div className="flex justify-between py-4">
-            <a href="tel:+91 8374902234" className="inline-flex items-center"><img className="inline-block w-[13.6px] h-[13.6px] mt-1" src="assets/images/icons/nav-phone-dark.svg" alt="phone icon" />+91 8374902234</a>
+        <div className='text-green'>
+          <div className="flex justify-between py-4 bg-[#393280] px-8">
+            <a href="tel:+91 8374902234" className="inline-flex items-center text-white"><img className="inline-block w-[13.6px] h-[13.6px] mt-1" src="assets/images/icons/nav-phone-white.svg" alt="phone icon" />+91 8374902234</a>
 
             <div className="flex items-center space-x-8 text-primary">
-              <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-fb-dark.svg" alt="facebook icon" /></a>
-              <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-insta-dark.svg" alt="instagram icon" /></a>
-              <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-lin-dark.svg" alt="linked in icon" /></a>
-              <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-tw-dark.svg" alt="twitter icon" /></a>
-              <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-soc-dark.svg" alt="social icon" /></a>
+              <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-fb-white.svg" alt="facebook icon" /></a>
+              <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-insta-white.svg" alt="instagram icon" /></a>
+              <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-lin-white.svg" alt="linked in icon" /></a>
+              <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-tw-white.svg" alt="twitter icon" /></a>
+              <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-soc-white.svg" alt="social icon" /></a>
             </div>
           </div>
 
-          <hr className="border-2" />
-
-          <div className="grid grid-cols-12 gap-4 items-end py-4">
-            <div className="col-span-2">
-              <div className="rounded-full w-20 h-20 bg-gray-800">
+          <div className="grid grid-cols-12 gap-4 items-end py-4 mx-8">
+            <div className="col-span-2 flex items-center h-full">
+              <div className="relative w-[55px] h-[55px] p-[.2px] rounded-[10px] border-2 border-orange">
+                <img className='z-2 w-full' src="assets/images/icons/products-nav-1.png" alt="" />
+                <img className='absolute inset-x-0 mx-auto top-3 z-3' src="assets/images/icons/products-nav-2.png" alt="" />
+              </div>
+            </div>
+            <div className="col-span-8 flex justify-center items-center">
+              <div className="rounded-full w-20 h-20 bg-[#C4C4C4]">
 
               </div>
             </div>
-            <div className="col-span-5 items-center">
-              
-            </div>
-            <div className="col-span-5 items-end">
-              <div className="flex justify-end">
+            <div className="col-span-2 flex justify-end items-center h-full">
+              <div className="flex justify-end items-center">
                 <div className="grid grid-cols-3 gap-2">
                   <div className="border-e-2 border-gray text-center">
-                    <Link to="/" className="inline-flex items-center gap-2 px-2 uppercase"><img src="assets/images/icons/nav-account.svg" alt="" /></Link>
+                    <Link to="/" className="inline-flex items-center gap-2 px-2 uppercase"><img className='w-50' src="assets/images/icons/nav-account.svg" alt="" /></Link>
                   </div>
                   <div className="border-e-2 border-gray text-center">
-                    <Link to="/" className="inline-flex items-center gap-2 px-2 uppercase"><img src="assets/images/icons/nav-cart.svg" alt="" /></Link>
+                    <Link to="/" className="inline-flex items-center gap-2 px-2 uppercase"><img className='w-50' src="assets/images/icons/nav-cart.svg" alt="" /></Link>
                   </div>
                   <div className="text-center">
-                    <Link to="/" className="inline-flex items-center gap-2 px-2 uppercase"><img src="assets/images/icons/nav-wishlist.svg" alt="" /></Link>
+                    <Link to="/" className="inline-flex items-center gap-2 px-2 uppercase"><img className='w-50' src="assets/images/icons/nav-wishlist.svg" alt="" /></Link>
                   </div>
                 </div>
               </div>
@@ -140,17 +141,22 @@ export default function Products() {
           </div>
           <div className="col-span-10 xl:col-span-9">
             <div className="grid grid-cols-12 gap-4">
-              <div className="col-span-3 flex items-center">
-                <span className='block p-2 text-md'>Sort by: Alphabetically, A-Z</span>
+              <div className="col-span-4 flex items-center">
+                <span className='flex items-center gap-2 p-2 text-md'>Sort by: Alphabetically, A-Z <img src="assets/images/icons/carat-down.svg" alt="down arrow" /></span>
               </div>
-              <div className="col-span-3 flex items-center">
+              <div className="col-span-4 flex items-center">
                 <span className='block p-2 text-md'>Showing 1 - 12 of 26 result</span>
               </div>
-              <div className="col-span-3 flex items-center">
-                <span className='block p-2 text-md'>Show: 12</span>
+              <div className="col-span-2 flex items-center">
+                <span className='flex items-center gap-2 p-2 text-md'>Show: 12 <img src="assets/images/icons/carat-down.svg" alt="down arrow" /></span>
               </div>
-              <div className="col-span-3 flex items-center">
-                block, menu
+              <div className="col-span-2 flex gap-10 items-center">
+                <button className="bg-transparent border-0 p-2 w-10">
+                  <img src="assets/images/icons/btn-grid.svg" alt="" />
+                </button>
+                <button className="bg-transparent border-0 p-2 w-10">
+                  <img src="assets/images/icons/btn-list.svg" alt="" />
+                </button>
               </div>
             </div>
 
@@ -164,9 +170,9 @@ export default function Products() {
                     </div>
 
                     <div className="text-center">
-                      <h3 className="text-[22px] capitalize">{book.name}</h3>
-                      <h5 className="text-[14px] text-gray capitalize">{book.author}</h5>
-                      <h5 className="text-[18px] mt-2 text-orange">$ {book.price}</h5>
+                      <h3 className="text-2xl capitalize">{book.name}</h3>
+                      <h5 className="text-md text-gray capitalize">{book.author}</h5>
+                      <h5 className="text-xl mt-2 text-orange">$ {book.price}</h5>
                     </div>
                   </div>
                 ))}

@@ -55,7 +55,7 @@ export default function About() {
             <div className="h-max">
               <h1 className="capitalize text-5xl mb-8">ipsum dolor si</h1>
               <p className="capitalize text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu.</p>
-              <button className="outline w-[197px] h-[61px] mt-8 rounded-md">Read More</button>
+              <button className="outline w-[187px] h-[51px] mt-8 rounded-md">Read More</button>
             </div>
           </div>
           <div className="flex justify-end">
@@ -70,9 +70,9 @@ export default function About() {
           <div className="col-span-3">
             <div className="relative hover:cursor-pointer rounded-[11px]">
               <img src="assets/images/about/higher-education.png" alt="category image" className="w-full rounded-[11px] h-[394px]" />
-              <caption className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full rounded-[11px]">
-                <h3 className="text-white text-[22px] font-bold text-center">Higher Education</h3>
-              </caption>
+              <div className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full rounded-[11px]">
+                <h3 className="text-white text-2xl font-bold text-center">Higher Education</h3>
+              </div>
             </div>
           </div>
           <div className="col-span-6">
@@ -88,34 +88,34 @@ export default function About() {
           <div className="col-span-3">
             <div className="relative hover:cursor-pointer rounded-[11px]">
               <img src="assets/images/about/management.png" alt="category image" className="w-full rounded-[11px] h-[394px]" />
-              <caption className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full rounded-[11px]">
-                <h3 className="text-white text-[22px] font-bold text-center">Management Books</h3>
-              </caption>
+              <div className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full rounded-[11px]">
+                <h3 className="text-white text-2xl font-bold text-center">Management Books</h3>
+              </div>
             </div>
           </div>
 
           <div className="col-span-3">
             <div className="relative hover:cursor-pointer rounded-[11px]">
               <img src="assets/images/about/finance.png" alt="category image" className="w-full rounded-[11px] h-[394px]" />
-              <caption className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full rounded-[11px]">
-                <h3 className="text-white text-[22px] font-bold text-center">Finance Books</h3>
-              </caption>
+              <div className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full rounded-[11px]">
+                <h3 className="text-white text-2xl font-bold text-center">Finance Books</h3>
+              </div>
             </div>
           </div>
           <div className="col-span-6">
             <div className="relative hover:cursor-pointer rounded-[11px]">
               <img src="assets/images/about/engineering.png" alt="category image" className="w-full rounded-[11px] h-[394px]" />
-              <caption className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full rounded-[11px]">
-                <h3 className="text-white text-[22px] font-bold text-center">Engineering Books</h3>
-              </caption>
+              <div className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full rounded-[11px]">
+                <h3 className="text-white text-2xl font-bold text-center">Engineering Books</h3>
+              </div>
             </div>
           </div>
           <div className="col-span-3">
             <div className="relative hover:cursor-pointer rounded-[11px]">
               <img src="assets/images/about/commerce.png" alt="category image" className="w-full rounded-[11px] h-[394px]" />
-              <caption className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full rounded-[11px]">
-                <h3 className="text-white text-[22px] font-bold text-center">Commerce Books</h3>
-              </caption>
+              <div className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full rounded-[11px]">
+                <h3 className="text-white text-2xl font-bold text-center">Commerce Books</h3>
+              </div>
             </div>
           </div>
         </div>
@@ -149,8 +149,8 @@ export default function About() {
 
       {/* Book Releases */}
       <section className="min-h-128 py-20 px-10 text-blue my-8" id='new-release'>
-        <h3 className="text-[48px] text-center px-4 text-[#173F5F]">New Release Books</h3>
-        <h5 className="text-[18px] mb-4 text-center text-[#767070]">1000+ books are published by different authors everyday. </h5>
+        <h3 className="text-4xl text-center px-4 text-[#173F5F]">New Release Books</h3>
+        <h5 className="text-xl mb-4 text-center text-[#767070]">1000+ books are published by different authors everyday. </h5>
         <Link to='/books' className="flex justify-center gap-2 items-center text-orange text-xl mt-6 text-center">View all products <img src="assets/images/about/arrow.svg" alt="arrow" /></Link>
       
         <div className="grid grid-cols-4 gap-20 mt-12">
@@ -161,8 +161,8 @@ export default function About() {
               </div>
 
               <div className="text-center">
-                <h3 className="text-[22px] text-[#173F5F] capitalize">{book.name}</h3>
-                <h5 className="text-[14px] text-gray capitalize">{book.author}</h5>
+                <h3 className="text-2xl text-[#173F5F] capitalize">{book.name}</h3>
+                <h5 className="text-md text-gray capitalize">{book.author}</h5>
                 <div className="flex justify-center gap-2 mt-4">
                   <img src="assets/images/about/rating.svg" alt="rating" />
                 </div>
@@ -183,13 +183,13 @@ export default function About() {
           <div className="flex justify-center items-center">
             <div className="h-max">
               <h5 className="text-md text-[#969595] my-6">Featured Book of the week</h5>
-              <h2 className="text-[48px] my-6">Birds gonna be happy</h2>
+              <h2 className="text-4xl my-6">Birds gonna be happy</h2>
               <div className="flex justify-start gap-2 my-6">
                 <img src="assets/images/about/rating.svg" alt="rating" />
               </div>
               <p className="text-[#7A7A7A] text-xl my-6">Jump start your book reading by quickly check through the popular book categories. 1000+ books are published by different authors everyday. Buy your favourite books on TreeBooks Today.</p>
 
-              <button className="my-6 w-[198px] h-[61px] outline border border-[#173F5F] text-[#173F5F] rounded-md flex justify-center items-center gap-2 text-xl font-normal">View More <img src="assets/images/about/btn-arrow.svg" alt="arrow" className="text-[#173F5F]" /></button>
+              <button className="my-6 w-[188px] h-[51px] outline border border-[#173F5F] text-[#173F5F] rounded-md flex justify-center items-center gap-2 text-xl font-normal">View More <img src="assets/images/about/btn-arrow.svg" alt="arrow" className="text-[#173F5F]" /></button>
             </div>
           </div>
         </div>
@@ -199,16 +199,16 @@ export default function About() {
       <section className="text-blue bg-[#CACECF] m-16">
         <div className="grid grid-cols-12 bg-clip-border bg-left-bottom bg-no-repeat bg-cover">
           {/* Left */}
-          <div className='col-span-4 xl:col-span-3 flex justify-start overflow-hidden'>
+          <div className='col-span-4 lg:col-span-3 flex justify-start overflow-hidden'>
             <img src="assets/images/about/coming-soon-bg.png" alt="ebooks" className="max-w-none" />
           </div>
 
           {/* Middle */}
-          <div className="col-span-4 xl:col-span-5 p-6 bg-[#CACECF] text-[#173F5F] text-center">
-            <h2 className="font-bold text-3xl mb-4">Coming Soon</h2>
+          <div className="col-span-4 lg:col-span-5 p-6 bg-[#CACECF] text-[#173F5F] text-center">
+            <h2 className="font-bold text-3xl mb-4 mt-10">Coming Soon</h2>
             <p className="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac.</p>
             <div className="flex justify-center">
-              <button className="my-6 w-[198px] h-[61px] outline border border-[#173F5F] text-[#173F5F] rounded-md flex justify-center items-center gap-2 text-xl font-normal">View More <img src="assets/images/about/btn-arrow.svg" alt="arrow" className="text-[#173F5F]" /></button>
+              <button className="my-6 w-[188px] h-[41px] outline border border-[#173F5F] text-[#173F5F] rounded-md flex justify-center items-center gap-2 text-xl font-normal">View More <img src="assets/images/about/btn-arrow.svg" alt="arrow" className="text-[#173F5F]" /></button>
             </div>
           </div>
 
@@ -245,13 +245,13 @@ export default function About() {
       {/* Access FAQ */}
       <section className="py-20 px-16 text-[#173F5F] my-8 flex flex-col justify-between items-center text-center gap-10">
         <h2 className="text-3xl">Still not sure?</h2>
-        <p>Jump start your book reading by quickly check through the popular book <br /> categories. 1000+ books are published by different authors everyday. Buy your <br /> favourite books on TreeBooks Today.</p>
+        <p className="text-xl">Jump start your book reading by quickly check through the popular book <br /> categories. 1000+ books are published by different authors everyday. Buy your <br /> favourite books on TreeBooks Today.</p>
         <button className="my-6 w-[188px] h-[51px] outline border border-[#173F5F] text-[#173F5F] rounded-md flex justify-center items-center gap-2 text-xl font-normal">Read FAQ</button>
       </section>
 
       {/* Articles */}
       <section className="min-h-128 py-20 px-8 text-blue my-8 bg-[#F7FCFC]" id='blog'>
-        <h5 className="text-[16px] mb-4 text-center text-[#7A7A7A]">Read our articles</h5>
+        <h5 className="text-md mb-4 text-center text-[#7A7A7A]">Read our articles</h5>
         <div className="flex justify-center items-center">
           <hr className="grow my-auto me-4 w-8 border-t-2 border-gray-100" /> 
           <h3 className="text-[38px] text-center px-4">Latest Articles</h3>
@@ -280,7 +280,7 @@ export default function About() {
         </div>
 
         <div className="flex justify-center">
-          <button className="my-6 w-[256px] h-[58px] outline border border-[#173F5F] text-[#173F5F] flex justify-center items-center gap-2 text-xl font-normal">Read All Articles <img src="assets/images/about/btn-arrow.svg" alt="" /></button>
+          <button className="my-6 w-[246px] h-[48px] outline border border-[#173F5F] text-[#173F5F] flex justify-center items-center gap-2 text-xl font-normal">Read All Articles <img src="assets/images/about/btn-arrow.svg" alt="" /></button>
         </div>
       </section>
 

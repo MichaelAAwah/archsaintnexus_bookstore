@@ -7,41 +7,41 @@ export default function Footer() {
         <div className="col-span-1"></div>
         <div className="col-span-3 flex flex-col justify-center">
           <img src="assets/images/logo.png" alt="logo" className="w-[83px] h-[87px] mb-4" />
-          <p className="text-[18px] mb-10">Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          <p className="text-xl mb-10">Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
           <div className="flex justify-between gap-5">
             <div className="footer-icon">
-              <img className="w-[40px] h-[40px]" src="assets/images/icons/footer-fb.png" alt="facebook icon" />
+              <img className="w-[30px] h-[30px]" src="assets/images/icons/footer-fb.png" alt="facebook icon" />
             </div>
             <div className="footer-icon">
-              <img className="w-[40px] h-[40px]" src="assets/images/icons/footer-lin.png" alt="linkedin icon" />
+              <img className="w-[30px] h-[30px]" src="assets/images/icons/footer-lin.png" alt="linkedin icon" />
             </div>
             <div className="footer-icon">
-              <img className="w-[40px] h-[40px]" src="assets/images/icons/footer-tw.png" alt="twitter icon" />
+              <img className="w-[30px] h-[30px]" src="assets/images/icons/footer-tw.png" alt="twitter icon" />
             </div>
             <div className="footer-icon">
-              <img className="w-[40px] h-[40px]" src="assets/images/icons/footer-yu.png" alt="youtube icon" />
+              <img className="w-[30px] h-[30px]" src="assets/images/icons/footer-yu.png" alt="youtube icon" />
             </div>
           </div>
         </div>
         <div className="col-span-2"></div>
         <div className="col-span-2 flex flex-col gap-2">
-          <h4 className="text-[20px] uppercase text-orange mb-8">Contact</h4>
-          <Link to="/" className="text-[14px] text-blue uppercase">Home</Link>
-          <Link to="/about" className="text-[14px] text-blue uppercase">About us</Link>
-          <Link to="/books" className="text-[14px] text-blue uppercase">Books</Link>
-          <a href="#ebooks" className="text-[14px] text-blue uppercase">Ebooks</a>
-          <a href="#new-release" className="text-[14px] text-blue uppercase">New Release</a>
-          <a href="#contact" className="text-[14px] text-blue uppercase">Contact Us</a>
-          <a href="#blog" className="text-[14px] text-blue uppercase">Blog</a>
+          <h4 className="text-xl uppercase text-orange mb-8">Contact</h4>
+          <Link to="/" className="text-md text-blue uppercase">Home</Link>
+          <Link to="/about" className="text-md text-blue uppercase">About us</Link>
+          <Link to="/books" className="text-md text-blue uppercase">Books</Link>
+          <a href="#ebooks" className="text-md text-blue uppercase">Ebooks</a>
+          <a href="#new-release" className="text-md text-blue uppercase">New Release</a>
+          <a href="#contact" className="text-md text-blue uppercase">Contact Us</a>
+          <a href="#blog" className="text-md text-blue uppercase">Blog</a>
         </div>
         <div className="col-span-4 flex flex-col">
-          <h4 className="text-[20px] uppercase text-orange mb-8">Latest news</h4>
+          <h4 className="text-xl uppercase text-orange mb-8">Latest news</h4>
           <div className="grid grid-cols-12 gap-2 mb-4">
             <div className="col-span-4">
               <img src="assets/images/footer-news-1.png" alt="news image" />
             </div>
             <div className="col-span-8 flex flex-col justify-center">
-              <h5 className="text-orange text-[14px]">Nostrud exercitation</h5>
+              <h5 className="text-orange text-md">Nostrud exercitation</h5>
               <p className="text-[12px]">Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
               <span className="text-[#F6D55C] text-[10px]">15 April 2022</span>
             </div>
@@ -52,7 +52,7 @@ export default function Footer() {
               <img src="assets/images/footer-news-2.png" alt="news image" />
             </div>
             <div className="col-span-8 flex flex-col justify-center">
-              <h5 className="text-orange text-[14px]">Nostrud exercitation</h5>
+              <h5 className="text-orange text-md">Nostrud exercitation</h5>
               <p className="text-[12px]">Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
               <span className="text-[#F6D55C] text-[10px]">15 April 2022</span>
             </div>
@@ -63,11 +63,11 @@ export default function Footer() {
       <div className="grid grid-cols-12 gap-16">
         <div className="col-span-1"></div>
         <div className="col-span-3 flex flex-col justify-start">
-          <span className="text-[16px] capitalize">&copy; 2022 Arihant. All rights reserved.</span>
+          <span className="text-md capitalize">&copy; 2022 Arihant. All rights reserved.</span>
         </div>
         <div className="col-span-5"></div>
         <div className="col-span-3 flex flex-col justify-end">
-          <span className="text-[16px] capitalize text-end"><span className="text-orange">Privacy</span> | Terms of service</span>
+          <span className="text-md capitalize text-end"><span className="text-orange">Privacy</span> | Terms of service</span>
         </div>
       </div>
     </div>

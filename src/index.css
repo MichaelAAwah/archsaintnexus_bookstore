@@ -18,6 +18,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  font-size: 12px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #173F5F;
