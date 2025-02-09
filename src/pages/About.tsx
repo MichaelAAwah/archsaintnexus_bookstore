@@ -3,29 +3,32 @@ import { Link } from "react-router-dom";
 import Footer from "@/components/footer";
 import Navbar from "@/components/Navbar";
 import usePageTitle from "@/hooks/usePageTitle";
+import { useQuery } from "@tanstack/react-query";
+import { getBooks } from "@/lib/api";
+import BookSkeleton from "@/components/book-skeleton";
 
-const newReleases = [
-  {
-    name: 'The Mind Connection',
-    author: 'Joyce Meyer',
-    image: 'assets/images/about/about-release-book-1.png'
-  },
-  {
-    name: 'The Road to Recognition',
-    author: 'Seth Price/ Barry Feldman',
-    image: 'assets/images/about/about-release-book-2.png'
-  },
-  {
-    name: 'Battlefield of the mind',
-    author: 'Joyce Meyer',
-    image: 'assets/images/about/about-release-book-3.png'
-  },
-  {
-    name: 'The Road to Recognition',
-    author: 'Seth Price/ Barry Feldman',
-    image: 'assets/images/about/about-release-book-2.png'
-  },
-]
+// const newReleases = [
+//   {
+//     name: 'The Mind Connection',
+//     author: 'Joyce Meyer',
+//     image: 'assets/images/about/about-release-book-1.png'
+//   },
+//   {
+//     name: 'The Road to Recognition',
+//     author: 'Seth Price/ Barry Feldman',
+//     image: 'assets/images/about/about-release-book-2.png'
+//   },
+//   {
+//     name: 'Battlefield of the mind',
+//     author: 'Joyce Meyer',
+//     image: 'assets/images/about/about-release-book-3.png'
+//   },
+//   {
+//     name: 'The Road to Recognition',
+//     author: 'Seth Price/ Barry Feldman',
+//     image: 'assets/images/about/about-release-book-2.png'
+//   },
+// ]
 
 const blogs = [
   {
@@ -44,6 +47,12 @@ const blogs = [
 
 export default function About() {
   usePageTitle('About Us')
+  const { data: books, isLoading: loadingBooks } = useQuery({
+    queryKey: ['books'],
+    queryFn: getBooks,
+  });
+
+  const newReleases = Array.isArray(books) ? [...books.slice(0, 4)] : []
   return (
     <div>
       <Navbar />
@@ -154,21 +163,33 @@ export default function About() {
         <Link to='/books' className="flex justify-center gap-2 items-center text-orange text-xl mt-6 text-center">View all products <img src="assets/images/about/arrow.svg" alt="arrow" /></Link>
       
         <div className="grid grid-cols-4 gap-20 mt-12">
-          {newReleases.map((book, index) => (
-            <div key={index} className="about-book-release-card p-6">
-              <div className="mb-6 flex justify-center">
-                <img src={book.image} alt="book cover" className="" />
-              </div>
-
-              <div className="text-center">
-                <h3 className="text-2xl text-[#173F5F] capitalize">{book.name}</h3>
-                <h5 className="text-md text-gray capitalize">{book.author}</h5>
-                <div className="flex justify-center gap-2 mt-4">
-                  <img src="assets/images/about/rating.svg" alt="rating" />
+          {loadingBooks ? (
+            <>
+              {[1, 2, 3, 4].map((n) => (
+                <div key={n} className="about-book-release-card p-6">
+                  <BookSkeleton key={n} />
                 </div>
-              </div>
-            </div>
-          ))}
+              ))}
+            </>
+          ) : (
+            <>
+              {newReleases.map((book, index) => (
+                <div key={index} className="about-book-release-card p-6">
+                  <div className="mb-6 flex justify-center w-fit mx-auto">
+                    <img src={book.image_url} alt="book cover" className="w-full h-96" />
+                  </div>
+
+                  <div className="text-center">
+                    <h3 className="text-2xl text-[#173F5F] capitalize">{book.book_name}</h3>
+                    <h5 className="text-md text-gray capitalize">{book.author}</h5>
+                    <div className="flex justify-center gap-2 mt-4">
+                      <img src="assets/images/about/rating.svg" alt="rating" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
         </div>
       </section>
 

@@ -1,46 +1,56 @@
+import BookSkeleton from '@/components/book-skeleton';
 import FooterOrange from '@/components/footerorange'
+import { getBooks } from '@/lib/api';
+import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom'
 
-const books = [
-  {
-    name: 'Simple way of piece life',
-    price: '40.00',
-    author: 'Armor Ramsey',
-    image: 'assets/images/home/home-release-book-1.png'
-  },
-  {
-    name: 'Great travel at desert',
-    price: '38.00',
-    author: 'Sanchit Howdy',
-    image: 'assets/images/products/book-5.png'
-  },
-  {
-    name: 'The lady beauty Scarlett',
-    price: '45.00',
-    author: 'Arthur Doyle',
-    image: 'assets/images/products/book-6.png'
-  },
-  {
-    name: 'Great travel at desert',
-    price: '38.00',
-    author: 'Sanchit Howdy',
-    image: 'assets/images/products/book-5.png'
-  },
-  {
-    name: 'The lady beauty Scarlett',
-    price: '45.00',
-    author: 'Arthur Doyle',
-    image: 'assets/images/products/book-7.png'
-  },
-  {
-    name: 'The lady beauty Scarlett',
-    price: '45.00',
-    author: 'Arthur Doyle',
-    image: 'assets/images/home/home-release-book-3.png'
-  },
-]
+// const books = [
+//   {
+//     name: 'Simple way of piece life',
+//     price: '40.00',
+//     author: 'Armor Ramsey',
+//     image: 'assets/images/home/home-release-book-1.png'
+//   },
+//   {
+//     name: 'Great travel at desert',
+//     price: '38.00',
+//     author: 'Sanchit Howdy',
+//     image: 'assets/images/products/book-5.png'
+//   },
+//   {
+//     name: 'The lady beauty Scarlett',
+//     price: '45.00',
+//     author: 'Arthur Doyle',
+//     image: 'assets/images/products/book-6.png'
+//   },
+//   {
+//     name: 'Great travel at desert',
+//     price: '38.00',
+//     author: 'Sanchit Howdy',
+//     image: 'assets/images/products/book-5.png'
+//   },
+//   {
+//     name: 'The lady beauty Scarlett',
+//     price: '45.00',
+//     author: 'Arthur Doyle',
+//     image: 'assets/images/products/book-7.png'
+//   },
+//   {
+//     name: 'The lady beauty Scarlett',
+//     price: '45.00',
+//     author: 'Arthur Doyle',
+//     image: 'assets/images/home/home-release-book-3.png'
+//   },
+// ]
 
 export default function Products() {
+  const { data: books, isLoading: loadingBooks } = useQuery({
+    queryKey: ['books'],
+    queryFn: getBooks,
+  });
+
+  const newReleases = Array.isArray(books) ? [...books] : []
+
   return (
     <div className='text-blue'>
       {/* Navbar */}
@@ -163,19 +173,29 @@ export default function Products() {
             {/* Book Lists */}
             <section className="min-h-128 px-8 text-blue my-8" id='new-release'>
               <div className="grid grid-cols-3 xl:grid-cols-3 gap-x-20">
-                {books.map((book, index) => (
-                  <div key={index}>
-                    <div className="book-card-shadow p-4 mb-6 flex justify-center">
-                      <img src={book.image} alt="book cover" className="" />
-                    </div>
+                {loadingBooks ? (
+                  <>
+                    {[1, 2, 3, 4].map((n) => (
+                      <BookSkeleton key={n} />
+                    ))}
+                  </>
+                ) : (
+                  <>
+                    {newReleases.map((book, index) => (
+                      <div key={index} className='mb-10'>
+                        <div className="book-card-shadow bg-white p-10 mb-6 flex justify-center w-fit mx-auto">
+                          <img src={book.image_url} alt="book cover" className=" w-60 h-96" />
+                        </div>
 
-                    <div className="text-center">
-                      <h3 className="text-2xl capitalize">{book.name}</h3>
-                      <h5 className="text-md text-gray capitalize">{book.author}</h5>
-                      <h5 className="text-xl mt-2 text-orange">$ {book.price}</h5>
-                    </div>
-                  </div>
-                ))}
+                        <div className="text-center">
+                          <h3 className="text-2xl capitalize">{book.book_name}</h3>
+                          <h5 className="text-md text-gray capitalize">{book.author}</h5>
+                          <h5 className="text-xl mt-2 text-orange">$ {book.price}</h5>
+                        </div>
+                      </div>
+                    ))}
+                  </>
+                )}
               </div>
             </section>
           </div>

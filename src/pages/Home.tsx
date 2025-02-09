@@ -1,33 +1,36 @@
 import { Link } from "react-router-dom";
 import Footer from "@/components/footer";
 import usePageTitle from "@/hooks/usePageTitle";
+import BookSkeleton from "@/components/book-skeleton";
+import { getBooks } from "@/lib/api";
+import { useQuery } from "@tanstack/react-query";
 
-const newReleases = [
-  {
-    name: 'Simple way of piece life',
-    price: '40.00',
-    author: 'Armor Ramsey',
-    image: 'assets/images/home/home-release-book-1.png'
-  },
-  {
-    name: 'Great travel at desert',
-    price: '38.00',
-    author: 'Sanchit Howdy',
-    image: 'assets/images/home/home-release-book-2.png'
-  },
-  {
-    name: 'The lady beauty Scarlett',
-    price: '45.00',
-    author: 'Arthur Doyle',
-    image: 'assets/images/home/home-release-book-3.png'
-  },
-  {
-    name: 'Once upon a time',
-    price: '35.00',
-    author: 'Klien Marry',
-    image: 'assets/images/home/home-release-book-4.png'
-  },
-]
+// const newReleases = [
+//   {
+//     name: 'Simple way of piece life',
+//     price: '40.00',
+//     author: 'Armor Ramsey',
+//     image: 'assets/images/home/home-release-book-1.png'
+//   },
+//   {
+//     name: 'Great travel at desert',
+//     price: '38.00',
+//     author: 'Sanchit Howdy',
+//     image: 'assets/images/home/home-release-book-2.png'
+//   },
+//   {
+//     name: 'The lady beauty Scarlett',
+//     price: '45.00',
+//     author: 'Arthur Doyle',
+//     image: 'assets/images/home/home-release-book-3.png'
+//   },
+//   {
+//     name: 'Once upon a time',
+//     price: '35.00',
+//     author: 'Klien Marry',
+//     image: 'assets/images/home/home-release-book-4.png'
+//   },
+// ]
 
 const blogs = [
   {
@@ -54,6 +57,13 @@ const blogs = [
 
 export default function Home() {
   usePageTitle('')
+  const { data: books, isLoading: loadingBooks } = useQuery({
+    queryKey: ['books'],
+    queryFn: getBooks,
+  });
+
+  const newReleases = Array.isArray(books) ? [...books.slice(0, 4)] : []
+
   return (
     <div>
       {/* Navbar */}
@@ -226,19 +236,29 @@ export default function Home() {
         </div>
       
         <div className="grid grid-cols-4 gap-20 mt-12">
-          {newReleases.map((book, index) => (
-            <div key={index}>
-              <div className="book-card-shadow p-4 mb-6 flex justify-center">
-                <img src={book.image} alt="book cover" className="" />
-              </div>
+          {loadingBooks ? (
+            <>
+              {[1, 2, 3, 4].map((n) => (
+                <BookSkeleton key={n} />
+              ))}
+            </>
+          ) : (
+            <>
+              {newReleases.map((book, index) => (
+                <div key={index}>
+                  <div className="book-card-shadow p-10 mb-6 flex justify-center w-fit mx-auto">
+                    <img src={book.image_url} alt="book cover" className=" w-60 h-96" />
+                  </div>
 
-              <div className="text-center">
-                <h3 className="text-2xl capitalize">{book.name}</h3>
-                <h5 className="text-md text-gray capitalize">{book.author}</h5>
-                <h5 className="text-xl mt-2 text-orange">$ {book.price}</h5>
-              </div>
-            </div>
-          ))}
+                  <div className="text-center">
+                    <h3 className="text-2xl capitalize">{book.book_name}</h3>
+                    <h5 className="text-md text-gray capitalize">{book.author}</h5>
+                    <h5 className="text-xl mt-2 text-orange">$ {book.price}</h5>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
         </div>
 
         <hr className="border-[#E0E0E0] my-12" />
