@@ -64,7 +64,7 @@ export default function Navbar() {
             <a href="#contact" className="inline-block px-2 text-white uppercase">Contact Us</a>
           </div>
           <div className="text-center p-2">
-            <a href="#blog" className="inline-block px-2 text-white uppercase">Blog</a>
+            <Link to="/blog" className="inline-block px-2 text-white uppercase">Blog</Link>
           </div>
         </div>
       </div>

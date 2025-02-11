@@ -24,6 +24,16 @@ export const BookSchema = z.object({
   pub_date: z.string(),
 });
 
+export const BlogSchema = z.object({
+  id: z.number(),
+  title: z.string(),
+  author: z.string(),
+  content: z.string(),
+  image_url: z.string(),
+  date_created: z.string(),
+  date_updated: z.string(),
+});
+
 export const OrderSchema = z.object({
   id: z.string(),
   productId: z.string(),
@@ -47,6 +57,7 @@ export const NotificationSchema = z.object({
 
 export type User = z.infer<typeof UserSchema>;
 export type Book = z.infer<typeof BookSchema>;
+export type Blog = z.infer<typeof BlogSchema>;
 export type Order = z.infer<typeof OrderSchema>;
 export type Notification = z.infer<typeof NotificationSchema>;
 
@@ -99,6 +110,45 @@ const mockBooks: Book[] = [
     image_url: 'assets/images/home/home-release-book-4.png',
     release_date: new Date().toLocaleDateString('en-CA'),
     pub_date: new Date().toLocaleDateString('en-CA'),
+  },
+]
+
+const mockBlogs: Blog[] = [
+  {
+    id: 1,
+    title: 'Learn about this week\'s top author',
+    author: 'John Doe',
+    content: 'Jump start your book reading by quickly check through the popular book categories...',
+    image_url: 'assets/images/home/blog-1.png',
+    date_created: new Date().toLocaleDateString('en-CA'),
+    date_updated: new Date().toLocaleDateString('en-CA'),
+  },
+  {
+    id: 1,
+    title: 'Why we celebrate readers',
+    author: 'John Doe',
+    content: 'Jump start your book reading by quickly check through the popular book categories...',
+    image_url: 'assets/images/home/blog-2.png',
+    date_created: new Date().toLocaleDateString('en-CA'),
+    date_updated: new Date().toLocaleDateString('en-CA'),
+  },
+  {
+    id: 1,
+    title: 'Toddlers can also read',
+    author: 'John Doe',
+    content: 'Jump start your book reading by quickly check through the popular book categories...',
+    image_url: 'assets/images/home/blog-3.png',
+    date_created: new Date().toLocaleDateString('en-CA'),
+    date_updated: new Date().toLocaleDateString('en-CA'),
+  },
+  {
+    id: 1,
+    title: 'Get started on your game',
+    author: 'John Doe',
+    content: 'Jump start your book reading by quickly check through the popular book categories...',
+    image_url: 'assets/images/home/blog-4.png',
+    date_created: new Date().toLocaleDateString('en-CA'),
+    date_updated: new Date().toLocaleDateString('en-CA'),
   },
 ]
 
@@ -282,6 +332,28 @@ export async function getBooks(): Promise<Book[]> {
   return response;
   await delay(500);
   return mockBooks;
+}
+
+export async function getBlogs(): Promise<Blog[]> {
+  const responseData = await fetch(`http://127.0.0.1:8000/api/blogs/`, {
+    method: 'GET',
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json", 
+    }
+  })
+  const response = await responseData.json()
+
+  if(!response || !responseData.ok) {
+    if(responseData.status === 401) {
+      throw new Error('Token Expired')
+    }
+    throw new Error(response ? response.message : 'Failed to fetch books')
+  }
+  
+  return response;
+  await delay(500);
+  return mockBlogs;
 }
 
 export async function getOrders(): Promise<Order[]> {

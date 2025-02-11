@@ -99,7 +99,7 @@ export default function Books() {
                   <a href="#contact" className="inline-block px-2 text-md text-dark uppercase">Contact Us</a>
                 </div>
                 <div className="text-center p-2">
-                  <a href="#blog" className="inline-block px-2 text-md text-dark uppercase">Blog</a>
+                  <Link to="/blog" className="inline-block px-2 text-md text-dark uppercase">Blog</Link>
                 </div>
               </div>
             </div>

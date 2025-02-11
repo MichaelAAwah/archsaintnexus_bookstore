@@ -6,6 +6,7 @@ import Home from '@/pages/Home';
 import About from '@/pages/About';
 import Books from '@/pages/Books';
 import Products from '@/pages/Products';
+import Blog from './pages/Blog';
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/books" element={<Books />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </Router>
     </QueryClientProvider>

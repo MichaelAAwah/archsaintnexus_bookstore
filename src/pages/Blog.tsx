@@ -44,14 +44,37 @@ import { Link } from 'react-router-dom'
 //   },
 // ]
 
-export default function Products() {
-  usePageTitle('Products')
-  const { data: books, isLoading: loadingBooks } = useQuery({
-    queryKey: ['books'],
-    queryFn: getBooks,
-  });
+const blogs = [
+  {
+    title: 'Learn about this week\'s top author',
+    desc: 'Jump start your book reading by quickly check through the popular book categories...',
+    image: 'assets/images/home/blog-1.png'
+  },
+  {
+    title: 'Why we celebrate readers',
+    desc: 'Jump start your book reading by quickly check through the popular book categories...',
+    image: 'assets/images/home/blog-2.png'
+  },
+  {
+    title: 'Toddlers can also read',
+    desc: 'Jump start your book reading by quickly check through the popular book categories...',
+    image: 'assets/images/home/blog-3.png'
+  },
+  {
+    title: 'Get started on your game',
+    desc: 'Jump start your book reading by quickly check through the popular book categories...',
+    image: 'assets/images/home/blog-4.png'
+  },
+]
 
-  const newReleases = Array.isArray(books) ? [...books] : []
+export default function Blog() {
+  usePageTitle('Blog')
+  // const { data: books, isLoading: loadingBooks } = useQuery({
+  //   queryKey: ['books'],
+  //   queryFn: getBooks,
+  // });
+
+  // const newReleases = Array.isArray(books) ? [...books] : []
 
   return (
     <div className='text-blue'>
@@ -101,11 +124,10 @@ export default function Products() {
         </div>
 
         <div className="flex justify-center products-nav-gradient p-10">
-          <h3 className="text-center uppercase text-blue"><Link to="/">Home</Link> / Products</h3>
+          <h3 className="text-center uppercase text-blue"><Link to="/">Home</Link> / Blog</h3>
         </div>
       </div>
 
-      {/* Listings and filters */}
       <div className='p-10'>
         <div className="grid grid-cols-12 gap-4">
           {/* Sidebar filters */}
@@ -151,6 +173,7 @@ export default function Products() {
               </div>
             </div>
           </div>
+
           <div className="col-span-10 xl:col-span-9">
             <div className="grid grid-cols-12 gap-4">
               <div className="col-span-4 flex items-center">
@@ -172,34 +195,56 @@ export default function Products() {
               </div>
             </div>
 
-            {/* Book Lists */}
-            <section className="min-h-128 px-8 text-blue my-8" id='new-release'>
-              <div className="grid grid-cols-3 xl:grid-cols-3 gap-x-20">
-                {loadingBooks ? (
-                  <>
-                    {[1, 2, 3, 4].map((n) => (
-                      <BookSkeleton key={n} />
-                    ))}
-                  </>
-                ) : (
-                  <>
-                    {newReleases.map((book, index) => (
-                      <div key={index} className='mb-10'>
-                        <div className="book-card-shadow bg-white p-10 mb-6 flex justify-center w-fit mx-auto">
-                          <img src={book.image_url} alt="book cover" className=" w-60 h-96" />
-                        </div>
-
-                        <div className="text-center">
-                          <h3 className="text-2xl capitalize">{book.book_name}</h3>
-                          <h5 className="text-md text-gray capitalize">{book.author}</h5>
-                          <h5 className="text-xl mt-2 text-orange">$ {book.price}</h5>
-                        </div>
+            <section className="px-8 text-blue my-8" id='blog'>
+              <h2 className="text-[32px] text-center text-black sentence">Highlights</h2>
+              <div className="grid grid-cols-2 gap-20 my-10">
+                {blogs.map((blog, index) => (
+                  <div className="relative group hover:cursor-pointer" key={index}>
+                    <div className="w-full z-2">
+                      <img src={blog.image} alt="blog image" className="w-full" />
+                      <div className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full">
+                        <h3 className="text-white text-3xl">{blog.title}</h3>
+                        <p className="text-white text-xl">{blog.desc}</p>
                       </div>
-                    ))}
-                  </>
-                )}
+                    </div>
+                    <div className="absolute top-0 left-0 z-3 bg-[#090606BF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full h-full flex justify-center items-center bg-[#090606BF]">
+                      <button className="my-6 w-[146px] h-[48px] outline border border-white text-white flex justify-center items-center gap-2 text-xl font-normal">View More</button>
+                    </div>
+                  </div>
+                ))}
               </div>
             </section>
+
+            {/* Articles */}
+            <section className="min-h-128 py-20 px-8 text-blue my-8 bg-[#F7FCFC]" id='blog'>
+              <div className="flex justify-center items-center">
+                <hr className="grow my-auto me-4 w-8 border-t-2 border-gray-100" /> 
+                <h3 className="text-[38px] text-center px-4">Articles</h3>
+                <hr className="grow my-auto me-4 w-8 border-t-2 border-gray-100" /> 
+              </div>
+            
+              <div className="grid grid-cols-3 gap-20 my-12">
+                {blogs.map((article, index) => (
+                  <div key={index}>
+                    <div className="flex justify-center">
+                      <img src={article.image} alt="article cover" className="w-full" />
+                    </div>
+
+                    <div className="">
+                      <span className="block my-4 text-[#74642F]">2 Aug, 2021</span>
+                      <h3 className="text-2xl text-[#173F5F] font-normal">{article.title}</h3>
+                      <hr className="border-[#C8C8C8] my-4" />
+                      <div className="flex justify-end items-center space-x-4 text-primary">
+                        <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-fb-dark.svg" alt="facebook icon" /></a>
+                        <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-tw-dark.svg" alt="twitter icon" /></a>
+                        <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-insta-dark.svg" alt="instagram icon" /></a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
           </div>
         </div>
       </div>
