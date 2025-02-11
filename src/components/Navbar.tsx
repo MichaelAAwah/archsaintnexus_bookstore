@@ -7,7 +7,7 @@ export default function Navbar() {
         <div className="flex justify-between py-4">
           <a href="tel:+91 8374902234" className="inline-flex items-center"><img className="inline-block w-[13.6px] h-[13.6px] mt-1" src="assets/images/icons/nav-phone-dark.svg" alt="phone icon" />+91 8374902234</a>
 
-          <div className="flex items-center space-x-8 text-primary">
+          <div className="flex items-center space-x-4 md:space-x-8 text-primary">
             <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-fb-dark.svg" alt="facebook icon" /></a>
             <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-insta-dark.svg" alt="instagram icon" /></a>
             <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-lin-dark.svg" alt="linked in icon" /></a>
@@ -19,16 +19,14 @@ export default function Navbar() {
         <hr className="border-2" />
 
         <div className="grid grid-cols-12 gap-4 items-center py-4">
-          <div className="col-span-2">
-            <div className="rounded-full w-20 h-20 bg-[#C4C4C4]">
-
-            </div>
+          <div className="col-span-12 md:col-span-2 place-self-center md:place-self-start">
+            <img src="assets/images/logo.png" alt="logo" className="w-20 h-20 rounded-full mb-4" />
           </div>
-          <div className="col-span-5 items-center relative">
+          <div className="col-span-12 md:col-span-5 items-center relative">
             <input type="search" className="w-full bg-[#F6F6F6] rounded-3xl p-2 px-4 pe-[18px]" placeholder="Search Books" />
             <img className="absolute top-3 right-2" src="assets/images/icons/nav-search.svg" alt="search icon" />
           </div>
-          <div className="col-span-5 items-center">
+          <div className="col-span-12 md:col-span-5 items-center">
             <div className="flex justify-center">
               <div className="grid grid-cols-3 gap-2">
                 <div className="border-e-2 border-gray text-center">
@@ -47,7 +45,7 @@ export default function Navbar() {
       </div>
 
       <div className="flex justify-center bg-green sticky top-0 z-50">
-        <div className="grid grid-cols-6 gap-2">
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-y-2 md:gap-2">
           <div className="border-e-2 border-white text-center p-2">
             <Link to="/" className="inline-block px-2 text-white uppercase">Home</Link>
           </div>

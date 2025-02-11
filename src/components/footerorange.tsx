@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export default function FooterOrange() {
   return (
-    <div className="p-20 text-white my-8 bg-orange relative">
-      <div className="grid grid-cols-12 gap-16 my-10">
+    <div className="p-10 md:p-20  text-white my-8 bg-orange relative">
+      <div className="grid md:grid-cols-12 gap-16 my-10">
         <div className="col-span-1"></div>
         <div className="col-span-3 flex flex-col justify-center">
           <img src="assets/images/logo-white.png" alt="logo" className="w-[83px] h-[87px] mb-4" />
@@ -42,14 +42,14 @@ export default function FooterOrange() {
         </div>
       </div>
 
-      <div className="grid grid-cols-12 gap-16">
-        <div className="col-span-1"></div>
-        <div className="col-span-3 flex flex-col justify-start">
+      <div className="grid md:grid-cols-12 gap-4 md:gap-16">
+        <div className="md:col-span-1"></div>
+        <div className="md:col-span-3 flex flex-col justify-start">
           <span className="text-md capitalize">&copy; 2022 Arihant. All rights reserved.</span>
         </div>
-        <div className="col-span-5"></div>
-        <div className="col-span-3 flex flex-col justify-end">
-          <span className="text-md capitalize text-end"><span className="">Privacy</span> | Terms of service</span>
+        <div className="md:col-span-5"></div>
+        <div className="md:col-span-3 flex flex-col justify-end">
+          <span className="text-md capitalize md:text-end"><span className="text-orange">Privacy</span> | Terms of service</span>
         </div>
       </div>
 

@@ -99,3 +99,7 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+p {
+  font-weight: 400;
+}

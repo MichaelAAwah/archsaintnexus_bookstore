@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div className="p-20 text-blue my-8 footer-gradient">
-      <div className="grid grid-cols-12 gap-16 my-10">
-        <div className="col-span-1"></div>
-        <div className="col-span-3 flex flex-col justify-center">
+    <div className="p-10 md:p-20 text-blue my-8 footer-gradient">
+      <div className="grid md:grid-cols-12 gap-16 my-10">
+        <div className="md:col-span-1"></div>
+        <div className="md:col-span-3 flex flex-col justify-center">
           <img src="assets/images/logo.png" alt="logo" className="w-[83px] h-[87px] mb-4" />
           <p className="text-xl mb-10">Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
           <div className="flex justify-between gap-5">
@@ -23,8 +23,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="col-span-2"></div>
-        <div className="col-span-2 flex flex-col gap-2">
+        <div className="md:col-span-2"></div>
+        <div className="md:col-span-2 flex flex-col gap-2">
           <h4 className="text-xl uppercase text-orange mb-8">Contact</h4>
           <Link to="/" className="text-md text-blue uppercase">Home</Link>
           <Link to="/about" className="text-md text-blue uppercase">About us</Link>
@@ -34,11 +34,11 @@ export default function Footer() {
           <a href="#contact" className="text-md text-blue uppercase">Contact Us</a>
           <a href="#blog" className="text-md text-blue uppercase">Blog</a>
         </div>
-        <div className="col-span-4 flex flex-col">
+        <div className="md:col-span-4 flex flex-col">
           <h4 className="text-xl uppercase text-orange mb-8">Latest news</h4>
           <div className="grid grid-cols-12 gap-2 mb-4">
             <div className="col-span-4">
-              <img src="assets/images/footer-news-1.png" alt="news image" />
+              <img src="assets/images/footer-news-1.png" alt="news image" className="h-full" />
             </div>
             <div className="col-span-8 flex flex-col justify-center">
               <h5 className="text-orange text-md">Nostrud exercitation</h5>
@@ -49,7 +49,7 @@ export default function Footer() {
 
           <div className="grid grid-cols-12 gap-2">
             <div className="col-span-4">
-              <img src="assets/images/footer-news-2.png" alt="news image" />
+              <img src="assets/images/footer-news-2.png" alt="news image" className="h-full" />
             </div>
             <div className="col-span-8 flex flex-col justify-center">
               <h5 className="text-orange text-md">Nostrud exercitation</h5>
@@ -60,14 +60,14 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="grid grid-cols-12 gap-16">
-        <div className="col-span-1"></div>
-        <div className="col-span-3 flex flex-col justify-start">
+      <div className="grid md:grid-cols-12 gap-4 md:gap-16">
+        <div className="md:col-span-1"></div>
+        <div className="md:col-span-3 flex flex-col justify-start">
           <span className="text-md capitalize">&copy; 2022 Arihant. All rights reserved.</span>
         </div>
-        <div className="col-span-5"></div>
-        <div className="col-span-3 flex flex-col justify-end">
-          <span className="text-md capitalize text-end"><span className="text-orange">Privacy</span> | Terms of service</span>
+        <div className="md:col-span-5"></div>
+        <div className="md:col-span-3 flex flex-col justify-end">
+          <span className="text-md capitalize md:text-end"><span className="text-orange">Privacy</span> | Terms of service</span>
         </div>
       </div>
     </div>

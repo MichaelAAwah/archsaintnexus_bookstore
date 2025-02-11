@@ -64,7 +64,7 @@ export default function Books() {
           <div className="flex justify-between py-4 bg-[#393280] px-8">
             <a href="tel:+91 8374902234" className="inline-flex items-center text-white"><img className="inline-block w-[13.6px] h-[13.6px] mt-1" src="assets/images/icons/nav-phone-white.svg" alt="phone icon" />+91 8374902234</a>
 
-            <div className="flex items-center space-x-8 text-primary">
+            <div className="flex items-center space-x-4 md:space-x-8 text-primary">
               <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-fb-white.svg" alt="facebook icon" /></a>
               <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-insta-white.svg" alt="instagram icon" /></a>
               <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-lin-white.svg" alt="linked in icon" /></a>
@@ -76,13 +76,11 @@ export default function Books() {
           <hr className="border-2" />
 
           <div className="grid grid-cols-12 gap-4 items-center py-4 mx-8">
-            <div className="col-span-2">
-              <div className="rounded-full w-20 h-20 bg-[#C4C4C4]">
-
-              </div>
+            <div className="col-span-12 md:col-span-2 place-self-center md:place-self-start">
+              <img src="assets/images/logo.png" alt="logo" className="w-20 h-20 rounded-full mb-4" />
             </div>
-            <div className="col-span-8 flex justify-center items-center relative">
-              <div className="grid grid-cols-6 gap-2">
+            <div className="col-span-12 md:col-span-8 flex justify-center items-center relative">
+              <div className="grid grid-cols-3 md:grid-cols-6 gap-y-2 md:gap-2">
                 <div className="border-e-2 border-[#E0E0E0] text-center p-2">
                   <Link to="/" className="inline-block px-2 text-md text-dark uppercase">Home</Link>
                 </div>
@@ -103,7 +101,7 @@ export default function Books() {
                 </div>
               </div>
             </div>
-            <div className="col-span-2 items-center">
+            <div className="col-span-12 md:col-span-2 items-center">
               <div className="flex justify-center">
                 <div className="grid grid-cols-3 gap-2">
                   <div className="border-e-2 border-gray text-center">
@@ -123,13 +121,13 @@ export default function Books() {
       </div>
       
       {/* Hero */}
-      <section className="min-h-128 books-hero-gradient text-green mb-8">
-        <div className="grid grid-cols-2 gap-2">
-          <div className="flex justify-center items-center p-4 ps-14">
+      <section className="min-h-128 about-hero-gradient text-green mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <div className="flex justify-center items-center p-4 md:p-8">
             <div className="h-max">
-              <h1 className="capitalize text-5xl mb-8">ipsum dolor si</h1>
-              <p className="capitalize text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu.</p>
-              <button className="outline w-[187px] h-[51px] mt-8 rounded-md">Read More</button>
+              <h1 className="capitalize text-7xl mb-8">ipsum dolor si</h1>
+              <p className="text-3xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu.</p>
+              <button className="outline text-xl w-[187px] h-[51px] mt-8 rounded-md flex justify-center items-center gap-2">View More <img src="assets/images/icons/btn-arrow.svg" alt="arrow" /></button>
             </div>
           </div>
           <div className="flex justify-end">
@@ -140,7 +138,7 @@ export default function Books() {
 
       {/* Categories */}
       <section className="min-h-128 py-20 px-8 text-blue my-8">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-4">
           {/* Left */}
           <div>
             <div className="flex items-center">
@@ -156,7 +154,7 @@ export default function Books() {
         </div>
         
 
-        <div className="grid grid-cols-3 gap-14 mt-10">
+        <div className="grid md:grid-cols-3 gap-14 mt-10">
           {/* Col */}
           <div className="text-center">
             <img src="assets/images/home/higher-education-books.png" alt="higher education" className="w-full h-38 shadow rounded-lg" />
@@ -192,7 +190,7 @@ export default function Books() {
           <hr className="grow my-auto me-4 w-8 border-t-2 border-gray-100" /> 
         </div>
       
-        <div className="grid grid-cols-4 gap-20 mt-12">
+        <div className="grid md:grid-cols-4 gap-20 mt-12">
           {loadingBooks ? (
             <>
               {[1, 2, 3, 4].map((n) => (
@@ -227,7 +225,7 @@ export default function Books() {
 
       {/* Featured Book */}
       <section className="min-h-128 py-20 px-8 text-blue my-8 featured-book-gradient">
-        <div className="grid grid-cols-2 gap-20 mt-12">
+        <div className="grid md:grid-cols-2 gap-20 mt-12">
           <div className="p-12">
             <div className="flex justify-center">
               <img src="assets/images/home/featured-book.png" alt="" className="" />
@@ -251,13 +249,13 @@ export default function Books() {
       </section>
 
       {/* Discount */}
-      <section className="px-8 text-blue bg-[#FCEBEA] m-16 rounded-[20px]">
-        <div className="grid grid-cols-2 gap-2">
+      <section className="px-8 text-blue bg-[#FCEBEA] m-8 md:m-16 p-2 md:p-0 rounded-[20px]">
+        <div className="grid md:grid-cols-2 gap-2">
           {/* Left */}
           <div className='flex flex-col justify-center'>
             <h3 className="text-blue font-bold text-3xl mb-4">All books are 50% off now! Don't miss such a deal!</h3>
             <p className="text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac.</p>
-            <div className="mt-4 flex gap-4">
+            <div className="mt-4 flex gap-8">
               <div className="text-center">
                 <span className="block text-orange font-bold text-xl">768</span>
                 <span className="block uppercase text-xl">Days</span>
@@ -292,33 +290,33 @@ export default function Books() {
             <p className="text-center text-md">Sed eu feugiat amet, libero ipsum enim pharetra hac dolor sit amet,<br/> consectetur. Elit adipiscing enim pharetra hac.</p>
           </div>
         
-          <div className="absolute inset-x-0 -bottom-10 mx-auto w-fit z-2">
+          <div className="absolute inset-x-0 -bottom-5 md:-bottom-10 mx-auto w-fit z-2">
             <div className="grid grid-cols-12 place-content-center p-4 bg-white">
-              <div className="col-span-1">
-                <div className="flex justify-center items-center border border-[#DFDFDF] p-4">
+              <div className="col-span-1 flex items-center">
+                <div className="flex justify-center items-center border border-[#DFDFDF] md:p-4">
                   <img src="assets/images/icons/mail-icon.png" alt="mail icon" />
                 </div>
               </div>
               <div className="col-span-8">
                 <input type="email" className="w-full p-4 px-4 bg-white" placeholder="youremail123@gmail.com" />
               </div>
-              <div className="col-span-3">
-                <button className="bg-orange text-white w-full p-4">Subscribe</button>
+              <div className="col-span-3 flex items-center">
+                <button className="bg-orange text-white w-full py-3 p-2 md:p-4">Subscribe</button>
               </div>
             </div>
           </div>
         </div>
 
         {/* Ornaments */}
-        <div className="absolute top-0 left-0 z-[2]">
+        <div className="hidden md:block absolute top-0 left-0 z-[2]">
           <img src="assets/images/books/ornament-top-left.png" alt="ornament" className="" />
         </div>
 
-        <div className="absolute bottom-0 left-0 z-[2]">
+        <div className="hidden md:block absolute bottom-0 left-0 z-[2]">
           <img src="assets/images/books/ornament-bottom-left.png" alt="ornament" className="" />
         </div>
 
-        <div className="absolute bottom-0 right-0 z-[2]">
+        <div className="hidden md:block absolute bottom-0 right-0 z-[2]">
           <img src="assets/images/books/ornament-bottom-right.png" alt="ornament" className="" />
         </div>
 
@@ -329,11 +327,11 @@ export default function Books() {
         <h5 className="text-md mb-4 text-center text-[#7A7A7A]">Read our articles</h5>
         <div className="flex justify-center items-center">
           <hr className="grow my-auto me-4 w-8 border-t-2 border-gray-100" /> 
-          <h3 className="text-[38px] text-center px-4">Latest Articles</h3>
+          <h3 className="text-2xl md:text-[38px] text-center px-4">Latest Articles</h3>
           <hr className="grow my-auto me-4 w-8 border-t-2 border-gray-100" /> 
         </div>
       
-        <div className="grid grid-cols-3 gap-20 my-12">
+        <div className="grid md:grid-cols-3 gap-20 my-12">
           {blogs.map((article, index) => (
             <div key={index}>
               <div className="flex justify-center">

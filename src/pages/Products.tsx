@@ -61,7 +61,7 @@ export default function Products() {
           <div className="flex justify-between py-4 bg-[#393280] px-8">
             <a href="tel:+91 8374902234" className="inline-flex items-center text-white"><img className="inline-block w-[13.6px] h-[13.6px] mt-1" src="assets/images/icons/nav-phone-white.svg" alt="phone icon" />+91 8374902234</a>
 
-            <div className="flex items-center space-x-8 text-primary">
+            <div className="flex items-center space-x-4 md:space-x-8 text-primary">
               <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-fb-white.svg" alt="facebook icon" /></a>
               <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-insta-white.svg" alt="instagram icon" /></a>
               <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-lin-white.svg" alt="linked in icon" /></a>
@@ -70,19 +70,17 @@ export default function Products() {
             </div>
           </div>
 
-          <div className="grid grid-cols-12 gap-4 items-end py-4 mx-8">
-            <div className="col-span-2 flex items-center h-full">
+          <div className="grid md:grid-cols-12 gap-4 items-end py-4 mx-8">
+            <div className="col-span-12 md:col-span-2 flex justify-center items-center h-full">
               <div className="relative w-[55px] h-[55px] p-[.2px] rounded-[10px] border-2 border-orange">
                 <img className='z-2 w-full' src="assets/images/icons/products-nav-1.png" alt="" />
                 <img className='absolute inset-x-0 mx-auto top-3 z-3' src="assets/images/icons/products-nav-2.png" alt="" />
               </div>
             </div>
-            <div className="col-span-8 flex justify-center items-center">
-              <div className="rounded-full w-20 h-20 bg-[#C4C4C4]">
-
-              </div>
+            <div className="col-span-12 md:col-span-2 place-self-center md:place-self-start">
+              <img src="assets/images/logo.png" alt="logo" className="w-20 h-20 rounded-full mb-4" />
             </div>
-            <div className="col-span-2 flex justify-end items-center h-full">
+            <div className="col-span-12 md:col-span-2 flex justify-center md:justify-end items-center h-full">
               <div className="flex justify-end items-center">
                 <div className="grid grid-cols-3 gap-2">
                   <div className="border-e-2 border-gray text-center">
@@ -109,7 +107,7 @@ export default function Products() {
       <div className='p-10'>
         <div className="grid grid-cols-12 gap-4">
           {/* Sidebar filters */}
-          <div className="col-span-2 xl:col-span-3">
+          <div className="hidden md:block col-span-2 xl:col-span-3">
             <div className="flex flex-col items-stretch gap-4">
               <div className="flex justify-between border-b border-gray-100">
                 <span className='block p-2 text-xl'>Price</span>
@@ -151,8 +149,8 @@ export default function Products() {
               </div>
             </div>
           </div>
-          <div className="col-span-10 xl:col-span-9">
-            <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-12 md:col-span-10 xl:col-span-9">
+            <div className="grid md:grid-cols-12 gap-4">
               <div className="col-span-4 flex items-center">
                 <span className='flex items-center gap-2 p-2 text-md'>Sort by: Alphabetically, A-Z <img src="assets/images/icons/carat-down.svg" alt="down arrow" /></span>
               </div>
@@ -174,7 +172,7 @@ export default function Products() {
 
             {/* Book Lists */}
             <section className="min-h-128 px-8 text-blue my-8" id='new-release'>
-              <div className="grid grid-cols-3 xl:grid-cols-3 gap-x-20">
+              <div className="grid md:grid-cols-3 xl:grid-cols-3 gap-x-20">
                 {loadingBooks ? (
                   <>
                     {[1, 2, 3, 4].map((n) => (
