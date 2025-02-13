@@ -293,7 +293,7 @@ export default function Home() {
       </section>
 
       {/* Discount */}
-      <section className="px-8 text-blue bg-[#FCEBEA] m-8 md:m-16 p-2 md:p-0 rounded-[20px]">
+      <section className="px-8 text-blue bg-[#FCEBEA] m-8 md:m-16 p-2 rounded-[20px]">
         <div className="grid md:grid-cols-2 gap-2">
           {/* Left */}
           <div className='flex flex-col justify-center'>

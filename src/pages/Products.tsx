@@ -70,7 +70,7 @@ export default function Products() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-12 gap-4 items-end py-4 mx-8">
+          <div className="flex justify-between items-center py-4 mx-8">
             <div className="col-span-12 md:col-span-2 flex justify-center items-center h-full">
               <div className="relative w-[55px] h-[55px] p-[.2px] rounded-[10px] border-2 border-orange">
                 <img className='z-2 w-full' src="assets/images/icons/products-nav-1.png" alt="" />
