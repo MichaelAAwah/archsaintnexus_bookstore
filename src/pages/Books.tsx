@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import FooterOrange from "@/components/footerorange";
 import usePageTitle from "@/hooks/usePageTitle";
 import { useQuery } from "@tanstack/react-query";
-import { getBooks } from "@/lib/api";
+import { getBlogs, getBooks } from "@/lib/api";
 import BookSkeleton from "@/components/book-skeleton";
+import { BlogSkeleton } from "@/components/blog-skeleton";
+import { formatDate } from "@/lib/utils";
 
 // const newReleases = [
 //   {
@@ -32,20 +34,20 @@ import BookSkeleton from "@/components/book-skeleton";
 //   },
 // ]
 
-const blogs = [
-  {
-    title: 'Reading books always makes the moments happy',
-    image: 'assets/images/about/blog-1.png'
-  },
-  {
-    title: 'Reading books always makes the moments happy',
-    image: 'assets/images/about/blog-2.png'
-  },
-  {
-    title: 'Reading books always makes the moments happy',
-    image: 'assets/images/about/blog-3.png'
-  },
-]
+// const blogs = [
+//   {
+//     title: 'Reading books always makes the moments happy',
+//     image: 'assets/images/about/blog-1.png'
+//   },
+//   {
+//     title: 'Reading books always makes the moments happy',
+//     image: 'assets/images/about/blog-2.png'
+//   },
+//   {
+//     title: 'Reading books always makes the moments happy',
+//     image: 'assets/images/about/blog-3.png'
+//   },
+// ]
 
 export default function Books() {
   usePageTitle('Books')
@@ -55,6 +57,13 @@ export default function Books() {
   });
 
   const newReleases = Array.isArray(books) ? [...books.slice(0, 4)] : []
+
+  const { data: allBlogs, isLoading: loadingBlogs } = useQuery({
+    queryKey: ['blogs'],
+    queryFn: getBlogs,
+  });
+
+  const blogs = Array.isArray(allBlogs) ? [...allBlogs.filter(b => b.author.toLowerCase() === 'jane doe').slice(0, 3)] : []
 
   return (
     <div>
@@ -332,24 +341,34 @@ export default function Books() {
         </div>
       
         <div className="grid md:grid-cols-3 gap-20 my-12">
-          {blogs.map((article, index) => (
-            <div key={index}>
-              <div className="flex justify-center">
-                <img src={article.image} alt="article cover" className="w-full" />
-              </div>
+          {loadingBlogs ? (
+            <>
+              {[1, 2, 3, 4].map((n) => (
+                <BlogSkeleton key={n} />
+              ))}
+            </>
+          ) : (
+            <>
+              {blogs.map((blog, index) => (
+                <div key={index}>
+                  <div className="flex justify-center">
+                    <img src={blog.image_url} alt="article cover" className="w-full h-[351px]" />
+                  </div>
 
-              <div className="">
-                <span className="block my-4 text-[#74642F]">2 Aug, 2021</span>
-                <h3 className="text-2xl text-[#173F5F] font-normal">{article.title}</h3>
-                <hr className="border-[#C8C8C8] my-4" />
-                <div className="flex justify-end items-center space-x-4 text-primary">
-                  <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-fb-dark.svg" alt="facebook icon" /></a>
-                  <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-tw-dark.svg" alt="twitter icon" /></a>
-                  <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-insta-dark.svg" alt="instagram icon" /></a>
+                  <div className="">
+                    <span className="block my-4 text-[#74642F]">{formatDate(blog.pub_date)}</span>
+                    <h3 className="text-2xl text-[#173F5F] font-normal">{blog.title}</h3>
+                    <hr className="border-[#C8C8C8] my-4" />
+                    <div className="flex justify-end items-center space-x-4 text-primary">
+                      <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-fb-dark.svg" alt="facebook icon" /></a>
+                      <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-tw-dark.svg" alt="twitter icon" /></a>
+                      <a href="#"><img className="w-[13.6px] h-[13.6px]" src="assets/images/icons/nav-insta-dark.svg" alt="instagram icon" /></a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              ))}
+            </>
+          )}
         </div>
 
         <div className="flex justify-center">

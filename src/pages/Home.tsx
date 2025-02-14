@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import Footer from "@/components/footer";
 import usePageTitle from "@/hooks/usePageTitle";
 import BookSkeleton from "@/components/book-skeleton";
-import { getBooks } from "@/lib/api";
+import { getBlogs, getBooks } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
+import { HomeBlogSkeleton } from "@/components/blog-skeleton";
 
 // const newReleases = [
 //   {
@@ -32,28 +33,28 @@ import { useQuery } from "@tanstack/react-query";
 //   },
 // ]
 
-const blogs = [
-  {
-    title: 'Learn about this week\'s top author',
-    desc: 'Jump start your book reading by quickly check through the popular book categories...',
-    image: 'assets/images/home/blog-1.png'
-  },
-  {
-    title: 'Why we celebrate readers',
-    desc: 'Jump start your book reading by quickly check through the popular book categories...',
-    image: 'assets/images/home/blog-2.png'
-  },
-  {
-    title: 'Toddlers can also read',
-    desc: 'Jump start your book reading by quickly check through the popular book categories...',
-    image: 'assets/images/home/blog-3.png'
-  },
-  {
-    title: 'Get started on your game',
-    desc: 'Jump start your book reading by quickly check through the popular book categories...',
-    image: 'assets/images/home/blog-4.png'
-  },
-]
+// const blogs = [
+//   {
+//     title: 'Learn about this week\'s top author',
+//     desc: 'Jump start your book reading by quickly check through the popular book categories...',
+//     image: 'assets/images/home/blog-1.png'
+//   },
+//   {
+//     title: 'Why we celebrate readers',
+//     desc: 'Jump start your book reading by quickly check through the popular book categories...',
+//     image: 'assets/images/home/blog-2.png'
+//   },
+//   {
+//     title: 'Toddlers can also read',
+//     desc: 'Jump start your book reading by quickly check through the popular book categories...',
+//     image: 'assets/images/home/blog-3.png'
+//   },
+//   {
+//     title: 'Get started on your game',
+//     desc: 'Jump start your book reading by quickly check through the popular book categories...',
+//     image: 'assets/images/home/blog-4.png'
+//   },
+// ]
 
 export default function Home() {
   usePageTitle('')
@@ -63,6 +64,13 @@ export default function Home() {
   });
 
   const newReleases = Array.isArray(books) ? [...books.slice(0, 4)] : []
+
+  const { data: allBlogs, isLoading: loadingBlogs } = useQuery({
+    queryKey: ['blogs'],
+    queryFn: getBlogs,
+  });
+
+  const blogs = Array.isArray(allBlogs) ? [...allBlogs.filter(b => b.author.toLowerCase() === 'john doe').slice(0, 4)] : []
 
   return (
     <div>
@@ -349,20 +357,30 @@ export default function Home() {
       <section className="px-8 text-blue my-8" id='blog'>
         <h2 className="text-[32px] text-center text-black sentence">Read our many blogs</h2>
         <div className="grid md:grid-cols-2 gap-20 my-10">
-          {blogs.map((blog, index) => (
-            <div className="relative group hover:cursor-pointer" key={index}>
-              <div className="w-full z-2">
-                <img src={blog.image} alt="blog image" className="w-full" />
-                <div className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full">
-                  <h3 className="text-white text-xl md:text-3xl">{blog.title}</h3>
-                  <p className="text-white text-md md:text-xl">{blog.desc}</p>
+          {loadingBlogs ? (
+            <>
+              {[1, 2, 3, 4].map((n) => (
+                <HomeBlogSkeleton key={n} />
+              ))}
+            </>
+          ) : (
+            <>
+              {blogs.map((blog, index) => (
+                <div className="relative group hover:cursor-pointer" key={index}>
+                  <div className="w-full z-2">
+                    <img src={blog.image_url} alt="blog image" className="w-full h-[384px]" />
+                    <div className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full">
+                      <h3 className="text-white text-xl md:text-3xl">{blog.title}</h3>
+                      <p className="text-white text-md md:text-xl truncate overflow-hidden">{blog.content}</p>
+                    </div>
+                  </div>
+                  <div className="absolute top-0 left-0 z-3 bg-[#090606BF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full h-full flex justify-center items-center bg-[#090606BF]">
+                    <button className="my-6 w-[146px] h-[48px] outline border border-white text-white flex justify-center items-center gap-2 text-xl font-normal">View More</button>
+                  </div>
                 </div>
-              </div>
-              <div className="absolute top-0 left-0 z-3 bg-[#090606BF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full h-full flex justify-center items-center bg-[#090606BF]">
-                <button className="my-6 w-[146px] h-[48px] outline border border-white text-white flex justify-center items-center gap-2 text-xl font-normal">View More</button>
-              </div>
-            </div>
-          ))}
+              ))}
+            </>
+          )}
         </div>
       </section>
 

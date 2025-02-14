@@ -17,8 +17,8 @@ export const BlogSchema = z.object({
   author: z.string(),
   content: z.string(),
   image_url: z.string(),
-  date_created: z.string(),
-  date_updated: z.string(),
+  pub_date: z.string(),
+  updated_at: z.string(),
 });
 
 export type Book = z.infer<typeof BookSchema>;
@@ -71,8 +71,8 @@ const mockBlogs: Blog[] = [
     author: 'John Doe',
     content: 'Jump start your book reading by quickly check through the popular book categories...',
     image_url: 'assets/images/home/blog-1.png',
-    date_created: new Date().toLocaleDateString('en-CA'),
-    date_updated: new Date().toLocaleDateString('en-CA'),
+    pub_date: new Date().toLocaleDateString('en-CA'),
+    updated_at: new Date().toLocaleDateString('en-CA'),
   },
   {
     id: 1,
@@ -80,8 +80,8 @@ const mockBlogs: Blog[] = [
     author: 'John Doe',
     content: 'Jump start your book reading by quickly check through the popular book categories...',
     image_url: 'assets/images/home/blog-2.png',
-    date_created: new Date().toLocaleDateString('en-CA'),
-    date_updated: new Date().toLocaleDateString('en-CA'),
+    pub_date: new Date().toLocaleDateString('en-CA'),
+    updated_at: new Date().toLocaleDateString('en-CA'),
   },
   {
     id: 1,
@@ -89,8 +89,8 @@ const mockBlogs: Blog[] = [
     author: 'John Doe',
     content: 'Jump start your book reading by quickly check through the popular book categories...',
     image_url: 'assets/images/home/blog-3.png',
-    date_created: new Date().toLocaleDateString('en-CA'),
-    date_updated: new Date().toLocaleDateString('en-CA'),
+    pub_date: new Date().toLocaleDateString('en-CA'),
+    updated_at: new Date().toLocaleDateString('en-CA'),
   },
   {
     id: 1,
@@ -98,8 +98,8 @@ const mockBlogs: Blog[] = [
     author: 'John Doe',
     content: 'Jump start your book reading by quickly check through the popular book categories...',
     image_url: 'assets/images/home/blog-4.png',
-    date_created: new Date().toLocaleDateString('en-CA'),
-    date_updated: new Date().toLocaleDateString('en-CA'),
+    pub_date: new Date().toLocaleDateString('en-CA'),
+    updated_at: new Date().toLocaleDateString('en-CA'),
   },
 ]
 
@@ -142,7 +142,7 @@ export async function getBlogs(): Promise<Blog[]> {
     if(responseData.status === 401) {
       throw new Error('Token Expired')
     }
-    throw new Error(response ? response.message : 'Failed to fetch books')
+    throw new Error(response ? response.message : 'Failed to fetch blogs')
   }
   
   return response;

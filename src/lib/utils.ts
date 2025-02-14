@@ -20,3 +20,14 @@ export function toFloat(number: string | number) {
   }
   return 0
 }
+
+export function formatDate(isoDate: string): string {
+  const date: Date = new Date(isoDate);
+
+  // Extract day, month, and year
+  const day: number = date.getUTCDate();
+  const month: string = date.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' });
+  const year: number = date.getUTCFullYear();
+
+  return `${day} ${month}, ${year}`;
+}
