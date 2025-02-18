@@ -5,6 +5,7 @@ import BookSkeleton from "@/components/book-skeleton";
 import { getBlogs, getBooks } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 import { HomeBlogSkeleton } from "@/components/blog-skeleton";
+import useAOS from "@/hooks/useAOS";
 
 // const newReleases = [
 //   {
@@ -71,6 +72,8 @@ export default function Home() {
   });
 
   const blogs = Array.isArray(allBlogs) ? [...allBlogs.filter(b => b.author.toLowerCase() === 'john doe').slice(0, 4)] : []
+
+  useAOS()
 
   return (
     <div>
@@ -145,7 +148,7 @@ export default function Home() {
       <section className="min-h-128 home-hero-gradient text-blue mb-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           <div className="flex justify-center items-center p-4 md:p-8">
-            <div className="h-max">
+            <div className="h-max" data-aos='fade-up'>
               <h1 className="capitalize text-7xl mb-8">ipsum dolor si</h1>
               <p className="text-3xl font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu.</p>
               <button className="outline text-xl w-[187px] h-[51px] mt-8 rounded-md flex justify-center items-center gap-2">View More <img src="assets/images/icons/btn-arrow.svg" alt="arrow" /></button>
@@ -178,21 +181,21 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-14 mt-10">
           {/* Col */}
-          <div className="text-center">
+          <div className="text-center" data-aos='fade-right'>
             <img src="assets/images/home/higher-education-books.png" alt="higher education" className="w-full h-38 shadow rounded-lg" />
             <h2 className="font-bold text-[24px] my-4">Higher Education</h2>
             <p className="text-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,</p>
           </div>
 
           {/* Col */}
-          <div className="text-center">
+          <div className="text-center" data-aos='fade-up'>
             <img src="assets/images/home/management-books.png" alt="management" className="w-full h-38 shadow rounded-lg" />
             <h2 className="font-bold text-[24px] my-4">Management Books</h2>
             <p className="text-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,</p>
           </div>
 
           {/* Col */}
-          <div className="text-center">
+          <div className="text-center" data-aos='fade-left'>
             <img src="assets/images/home/engineering-books.png" alt="engineering" className="w-full h-38 shadow rounded-lg" />
             <h2 className="font-bold text-[24px] my-4">Engineering Books</h2>
             <p className="text-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,</p>
@@ -242,6 +245,7 @@ export default function Home() {
         </div>
       
         <div className="grid md:grid-cols-4 gap-20 mt-12">
+                <BookSkeleton />
           {loadingBooks ? (
             <>
               {[1, 2, 3, 4].map((n) => (
@@ -251,7 +255,7 @@ export default function Home() {
           ) : (
             <>
               {newReleases.map((book, index) => (
-                <div key={index}>
+                <div key={index} data-aos='flip-left'>
                   <div className="book-card-shadow p-10 mb-6 flex justify-center w-fit mx-auto">
                     <img src={book.image_url} alt="book cover" className=" w-60 h-96" />
                   </div>
@@ -278,7 +282,7 @@ export default function Home() {
       <section className="min-h-128 py-20 px-8 text-blue my-8 featured-book-gradient">
         <div className="grid md:grid-cols-2 gap-20 mt-12">
           <div className="p-12">
-            <div className="flex justify-center relative">
+            <div className="flex justify-center relative" data-aos='zoom-in-up'>
               <img src="assets/images/home/featured-book.png" alt="" className="" />
               <img src="assets/images/home/featured-book-mask.png" className="absolute left-10 top-[40%]" alt="" />
             </div>
@@ -309,19 +313,19 @@ export default function Home() {
             <p className="text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac.</p>
             <div className="mt-4 flex gap-8">
               <div className="text-center">
-                <span className="block text-orange font-bold text-xl">768</span>
+                <span className="block text-orange font-bold text-xl" data-aos='flip-up'>768</span>
                 <span className="block uppercase text-xl">Days</span>
               </div>
               <div className="text-center">
-                <span className="block text-orange font-bold text-xl">01</span>
+                <span className="block text-orange font-bold text-xl" data-aos='flip-up'>01</span>
                 <span className="block uppercase text-xl">hours</span>
               </div>
               <div className="text-center">
-                <span className="block text-orange font-bold text-xl">27</span>
+                <span className="block text-orange font-bold text-xl" data-aos='flip-up'>27</span>
                 <span className="block uppercase text-xl">min</span>
               </div>
               <div className="text-center">
-                <span className="block text-orange font-bold text-xl">55</span>
+                <span className="block text-orange font-bold text-xl" data-aos='flip-up'>55</span>
                 <span className="block uppercase text-xl">sec</span>
               </div>
             </div>
@@ -366,7 +370,7 @@ export default function Home() {
           ) : (
             <>
               {blogs.map((blog, index) => (
-                <div className="relative group hover:cursor-pointer" key={index}>
+                <div className="relative group hover:cursor-pointer" key={index} data-aos='zoom-in-up'>
                   <div className="w-full z-2">
                     <img src={blog.image_url} alt="blog image" className="w-full h-[384px]" />
                     <div className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full">

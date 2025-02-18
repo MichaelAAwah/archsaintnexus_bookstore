@@ -1,6 +1,8 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import "aos/dist/aos.css";
+
 import './App.css'
 import Home from '@/pages/Home';
 import About from '@/pages/About';

@@ -8,6 +8,7 @@ import { getBlogs, getBooks } from "@/lib/api";
 import BookSkeleton from "@/components/book-skeleton";
 import { BlogSkeleton } from "@/components/blog-skeleton";
 import { formatDate } from "@/lib/utils";
+import useAOS from "@/hooks/useAOS";
 
 // const newReleases = [
 //   {
@@ -63,6 +64,8 @@ export default function About() {
 
   const blogs = Array.isArray(allBlogs) ? [...allBlogs.filter(b => b.author.toLowerCase() === 'jane doe').slice(0, 3)] : []
 
+  useAOS()
+
   return (
     <div>
       <Navbar />
@@ -71,7 +74,7 @@ export default function About() {
       <section className="min-h-128 about-hero-gradient text-green mb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           <div className="flex justify-center items-center p-4 md:p-8">
-            <div className="h-max">
+            <div className="h-max" data-aos='fade-up'>
               <h1 className="capitalize text-7xl mb-8">ipsum dolor si</h1>
               <p className="text-3xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu.</p>
               <button className="outline text-xl w-[187px] h-[51px] mt-8 rounded-md flex justify-center items-center gap-2">View More <img src="assets/images/icons/btn-arrow.svg" alt="arrow" /></button>
@@ -87,7 +90,7 @@ export default function About() {
       <section className="py-20 px-4 md:px-8 text-blue my-8">
         <div className="grid grid-cols-12 gap-4 md:gap-10">
           <div className="col-span-12 md:col-span-3">
-            <div className="relative hover:cursor-pointer rounded-[11px]">
+            <div className="relative hover:cursor-pointer rounded-[11px]" data-aos='fade-down-right'>
               <img src="assets/images/about/higher-education.png" alt="category image" className="w-full max-w-full rounded-[11px] h-[394px]" />
               <div className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full rounded-[11px]">
                 <h3 className="text-white text-2xl font-bold text-center">Higher Education</h3>
@@ -105,7 +108,7 @@ export default function About() {
             </div>
           </div>
           <div className="col-span-12 md:col-span-3">
-            <div className="relative hover:cursor-pointer rounded-[11px]">
+            <div className="relative hover:cursor-pointer rounded-[11px]" data-aos='fade-down-left'>
               <img src="assets/images/about/management.png" alt="category image" className="w-full max-w-full rounded-[11px] h-[394px]" />
               <div className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full rounded-[11px]">
                 <h3 className="text-white text-2xl font-bold text-center">Management Books</h3>
@@ -114,7 +117,7 @@ export default function About() {
           </div>
 
           <div className="col-span-12 md:col-span-3">
-            <div className="relative hover:cursor-pointer rounded-[11px]">
+            <div className="relative hover:cursor-pointer rounded-[11px]" data-aos='fade-up-right'>
               <img src="assets/images/about/finance.png" alt="category image" className="w-full max-w-full rounded-[11px] h-[394px]" />
               <div className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full rounded-[11px]">
                 <h3 className="text-white text-2xl font-bold text-center">Finance Books</h3>
@@ -122,7 +125,7 @@ export default function About() {
             </div>
           </div>
           <div className="col-span-12 md:col-span-6">
-            <div className="relative hover:cursor-pointer rounded-[11px]">
+            <div className="relative hover:cursor-pointer rounded-[11px]" data-aos='fade-up'>
               <img src="assets/images/about/engineering.png" alt="category image" className="w-full max-w-full rounded-[11px] h-[394px]" />
               <div className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full rounded-[11px]">
                 <h3 className="text-white text-2xl font-bold text-center">Engineering Books</h3>
@@ -130,7 +133,7 @@ export default function About() {
             </div>
           </div>
           <div className="col-span-12 md:col-span-3">
-            <div className="relative hover:cursor-pointer rounded-[11px]">
+            <div className="relative hover:cursor-pointer rounded-[11px]" data-aos='fade-up-left'>
               <img src="assets/images/about/commerce.png" alt="category image" className="w-full max-w-full rounded-[11px] h-[394px]" />
               <div className="absolute bottom-0 left-0 text-left p-4 blog-gradient bg-opacity-50 w-full rounded-[11px]">
                 <h3 className="text-white text-2xl font-bold text-center">Commerce Books</h3>
@@ -184,7 +187,7 @@ export default function About() {
           ) : (
             <>
               {newReleases.map((book, index) => (
-                <div key={index} className="about-book-release-card p-6">
+                <div key={index} className="about-book-release-card p-6" data-aos='flip-left'>
                   <div className="mb-6 flex justify-center w-fit mx-auto">
                     <img src={book.image_url} alt="book cover" className="w-full h-96" />
                   </div>
@@ -207,7 +210,7 @@ export default function About() {
       <section className="min-h-128 py-20 px-8 text-[#173F5F] my-8">
         <div className="grid md:grid-cols-2 gap-6 place-content-center mt-12">
           <div className="">
-            <div className="flex justify-center">
+            <div className="flex justify-center" data-aos='zoom-in-up'>
               <img src="assets/images/home/featured-book.png" alt="" className="" />
             </div>
           </div>
@@ -299,7 +302,7 @@ export default function About() {
           ) : (
             <>
               {blogs.map((blog, index) => (
-                <div key={index}>
+                <div key={index} data-aos='zoom-in-down'>
                   <div className="flex justify-center">
                     <img src={blog.image_url} alt="article cover" className="w-full h-[351px]" />
                   </div>
