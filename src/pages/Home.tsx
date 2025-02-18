@@ -245,7 +245,6 @@ export default function Home() {
         </div>
       
         <div className="grid md:grid-cols-4 gap-20 mt-12">
-                <BookSkeleton />
           {loadingBooks ? (
             <>
               {[1, 2, 3, 4].map((n) => (
